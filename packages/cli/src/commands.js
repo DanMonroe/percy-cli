@@ -31,7 +31,7 @@ function findModulePackages(dir) {
     return reduceFiles(dir, async (roots, file) => {
       let rootPath = path.join(dir, file.name);
 
-      if (file.name === '@percy') {
+      if (file.name === '@addepar') {
         return roots.concat(await reduceFiles(rootPath, (dirs, f) => (
           // specifically protect against files to allow linked directories
           f.isFile() ? dirs : dirs.concat(path.join(rootPath, f.name))
