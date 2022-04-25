@@ -49,7 +49,7 @@ function findModulePackages(dir) {
 } // Used by `findPnpPackages` to filter Percy CLI plugins
 
 
-const PERCY_PKG_REG = /^(@percy\/|percy-cli-)/; // Returns the paths of potential percy packages found within yarn's pnp system
+const PERCY_PKG_REG = /^(@percy\/|percy-cli-|@addepar\/percy-cli)/; // Returns the paths of potential percy packages found within yarn's pnp system
 
 function findPnpPackages(dir) {
   var _Module$findPnpApi;
