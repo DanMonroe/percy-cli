@@ -1,7 +1,7 @@
-import { sha256hash, base64encode } from '@percy/client/utils';
+import { sha256hash, base64encode } from '@addepar/percy-client/utils';
 import { logger, api, setupTest, createTestServer, dedent } from './helpers/index.js';
-import { waitFor } from '@percy/core/utils';
-import Percy from '@percy/core';
+import { waitFor } from '@addepar/percy-core/utils';
+import Percy from '@addepar/percy-core';
 
 describe('Snapshot', () => {
   let percy, server, testDOM;
@@ -98,7 +98,7 @@ describe('Snapshot', () => {
       },
       additionalSnapshots: [{
         suffix: '-test',
-        execute: { beforeSnapshot: () => {} }
+        execute: { beforeSnapshot: () => { } }
       }]
     });
 
@@ -121,11 +121,11 @@ describe('Snapshot', () => {
 
     expect(logger.stderr).toEqual([
       '[percy] Warning: The snapshot option `requestHeaders` ' +
-        'will be removed in 1.0.0. Use `discovery.requestHeaders` instead.',
+      'will be removed in 1.0.0. Use `discovery.requestHeaders` instead.',
       '[percy] Warning: The snapshot option `authorization` ' +
-        'will be removed in 1.0.0. Use `discovery.authorization` instead.',
+      'will be removed in 1.0.0. Use `discovery.authorization` instead.',
       '[percy] Warning: The snapshot option `snapshots` ' +
-        'will be removed in 1.0.0. Use `additionalSnapshots` instead.'
+      'will be removed in 1.0.0. Use `additionalSnapshots` instead.'
     ]);
   });
 
@@ -244,7 +244,7 @@ describe('Snapshot', () => {
       additionalSnapshots: [
         { prefix: 'foo ', waitForTimeout: 100 },
         { prefix: 'foo ', suffix: ' bar', waitForTimeout: 200 },
-        { name: 'foobar', waitForSelector: 'p', execute() {} }
+        { name: 'foobar', waitForSelector: 'p', execute() { } }
       ]
     });
 
@@ -287,7 +287,7 @@ describe('Snapshot', () => {
       additionalSnapshots: [
         { prefix: 'foo ', waitForTimeout: 100 },
         { prefix: 'foo ', suffix: ' bar', waitForTimeout: 200 },
-        { name: 'foobar', waitForSelector: '.ready', execute() {} }
+        { name: 'foobar', waitForSelector: '.ready', execute() { } }
       ]
     });
 
@@ -331,7 +331,7 @@ describe('Snapshot', () => {
 
     expect(logger.stderr).toEqual([
       '[percy] Received a duplicate snapshot name, ' +
-        'the previous snapshot was canceled: /foobar'
+      'the previous snapshot was canceled: /foobar'
     ]);
     expect(logger.stdout).toEqual([
       '[percy] Snapshot taken: /foobar'
@@ -418,7 +418,7 @@ describe('Snapshot', () => {
 
     await waitFor(() => !!percy.browser.sessions.size);
     let [session] = percy.browser.sessions.values();
-    await session.send('Page.crash').catch(() => {});
+    await session.send('Page.crash').catch(() => { });
     await snap;
 
     expect(logger.stderr).toEqual([
@@ -637,8 +637,8 @@ describe('Snapshot', () => {
       expect(logger.stderr).toEqual(jasmine.arrayContaining([
         '[percy] Encountered an error taking snapshot: test snapshot',
         '[percy] Error: test error\n' +
-          '    at execute (<anonymous>:3:17)\n' +
-          '    at withPercyHelpers (<anonymous>:4:11)'
+        '    at execute (<anonymous>:3:17)\n' +
+        '    at withPercyHelpers (<anonymous>:4:11)'
       ]));
     });
 
@@ -790,7 +790,7 @@ describe('Snapshot', () => {
       let root = api.requests['/builds/123/resources'][0].body.data;
       let cssURL = new URL(getResourceData()[1].attributes['resource-url']);
       let injectedDOM = testDOM.replace('</body>', (
-       `<link data-percy-specific-css rel="stylesheet" href="${cssURL.pathname}"/>`
+        `<link data-percy-specific-css rel="stylesheet" href="${cssURL.pathname}"/>`
       ) + '</body>');
 
       expect(root.id).toEqual(sha256hash(injectedDOM));

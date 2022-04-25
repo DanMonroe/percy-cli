@@ -1,4 +1,4 @@
-# @percy/config
+# @addepar/percy-config
 
 Handles loading and adding options to Percy configuration files. Uses
 [cosmiconfig](https://github.com/davidtheclark/cosmiconfig) to load configuration files and [JSON
@@ -16,7 +16,7 @@ from the current directory up to the home directoy. Configuration files are cach
 `reload` is `true`.
 
 ```js
-import PercyConfig from '@percy/config'
+import PercyConfig from '@addepar/percy-config'
 
 // loading is done synchronously
 const config = PercyConfig.load(options)
@@ -45,7 +45,7 @@ parsed and validated when `PercyConfig.load()` is called. See [JSON
 schema](https://json-schema.org/) for possible schema options.
 
 ```js
-import PercyConfig from '@percy/config'
+import PercyConfig from '@addepar/percy-config'
 
 PercyConfig.addSchema({
   propertyName: JSONSchema

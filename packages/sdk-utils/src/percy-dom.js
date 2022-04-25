@@ -1,7 +1,7 @@
 import percy from './percy-info.js';
 import request from './request.js';
 
-// Fetch and cache the @percy/dom script
+// Fetch and cache the @addepar/percy-dom script
 export async function fetchPercyDOM() {
   if (percy.domScript == null) {
     let response = await request('/percy/dom.js');

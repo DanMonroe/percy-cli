@@ -1,5 +1,5 @@
 {
-  "name": "@percy/cli-snapshot",
+  "name": "@addepar/percy-cli-snapshot",
   "version": "1.0.9-addepar.0",
   "license": "MIT",
   "repository": {
@@ -26,13 +26,13 @@
     "test": "node ../../scripts/test",
     "test:coverage": "yarn test --coverage"
   },
-  "@percy/cli": {
+  "@addepar/percy-cli": {
     "commands": [
       "./dist/snapshot.js"
     ]
   },
   "dependencies": {
-    "@percy/cli-command": "^1.0.9-addepar.0",
+    "@addepar/percy-cli-command": "^1.0.9-addepar.0",
     "yaml": "^2.0.0"
   }
 }

@@ -1,5 +1,5 @@
 import { logger, dedent } from './helpers.js';
-import command from '@percy/cli-command';
+import command from '@addepar/percy-cli-command';
 
 describe('Help output', () => {
   beforeEach(async () => {
@@ -11,7 +11,7 @@ describe('Help output', () => {
       commands: [command('bar', {
         commands: [command('baz', {
           description: 'Foo bar baz'
-        }, () => {})]
+        }, () => { })]
       })]
     });
 
@@ -215,7 +215,7 @@ describe('Help output', () => {
     let test = command('test', {
       args: [{ name: 'arg' }],
       commands: [command('foo', {})]
-    }, () => {});
+    }, () => { });
 
     await test(['--help']);
     expect(logger.stderr).toEqual([]);

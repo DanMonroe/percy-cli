@@ -1,4 +1,4 @@
-# @percy/logger
+# @addepar/percy-logger
 
 Common logger used throughout the Percy CLI and SDKs.
 
@@ -11,7 +11,7 @@ Common logger used throughout the Percy CLI and SDKs.
 ## Usage
 
 ``` js
-import logger from '@percy/logger'
+import logger from '@addepar/percy-logger'
 
 const log = logger('foobar')
 

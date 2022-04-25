@@ -1,5 +1,5 @@
 {
-  "name": "@percy/core",
+  "name": "@addepar/percy-core",
   "version": "1.0.9-addepar.0",
   "license": "MIT",
   "repository": {
@@ -39,10 +39,10 @@
     "test:types": "tsd"
   },
   "dependencies": {
-    "@percy/client": "^1.0.9-addepar.0",
-    "@percy/config": "^1.0.9-addepar.0",
-    "@percy/dom": "^1.0.9-addepar.0",
-    "@percy/logger": "^1.0.9-addepar.0",
+    "@addepar/percy-client": "^1.0.9-addepar.0",
+    "@addepar/percy-config": "^1.0.9-addepar.0",
+    "@addepar/percy-dom": "^1.0.9-addepar.0",
+    "@addepar/percy-logger": "^1.0.9-addepar.0",
     "content-disposition": "^0.5.4",
     "cross-spawn": "^7.0.3",
     "extract-zip": "^2.0.1",

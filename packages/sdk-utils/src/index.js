@@ -1,4 +1,4 @@
-import logger from '@percy/logger';
+import logger from '@addepar/percy-logger';
 import percy from './percy-info.js';
 import request from './request.js';
 import isPercyEnabled from './percy-enabled.js';

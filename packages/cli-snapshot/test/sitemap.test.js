@@ -1,11 +1,11 @@
-import { fs, logger, setupTest, createTestServer } from '@percy/cli-command/test/helpers';
-import snapshot from '@percy/cli-snapshot';
+import { fs, logger, setupTest, createTestServer } from '@addepar/percy-cli-command/test/helpers';
+import snapshot from '@addepar/percy-cli-snapshot';
 
 describe('percy snapshot <sitemap>', () => {
   let server;
 
   beforeEach(async () => {
-    snapshot.packageInformation = { name: '@percy/cli-snapshot' };
+    snapshot.packageInformation = { name: '@addepar/percy-cli-snapshot' };
     process.env.PERCY_TOKEN = '<<PERCY_TOKEN>>';
     await setupTest();
 
@@ -64,7 +64,7 @@ describe('percy snapshot <sitemap>', () => {
     expect(logger.stderr).toEqual([
       '[percy] Build not created',
       '[percy] Error: The sitemap must be an XML document, ' +
-        'but the content-type was "text/html"'
+      'but the content-type was "text/html"'
     ]);
   });
 

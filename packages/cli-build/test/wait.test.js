@@ -1,4 +1,4 @@
-import { logger, api, setupTest } from '@percy/cli-command/test/helpers';
+import { logger, api, setupTest } from '@addepar/percy-cli-command/test/helpers';
 import wait from '../src/wait.js';
 
 describe('percy build:wait', () => {
@@ -174,7 +174,7 @@ describe('percy build:wait', () => {
       expect(logger.stderr).toEqual(jasmine.arrayContaining([
         '[percy] Build #10 failed! https://percy.io/test/test/123',
         '[percy] Some snapshots in this build took too long to render ' +
-          'even after multiple retries.'
+        'even after multiple retries.'
       ]));
     });
 

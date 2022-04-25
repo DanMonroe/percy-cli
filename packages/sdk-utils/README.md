@@ -1,4 +1,4 @@
-# @percy/sdk-utils
+# @addepar/percy-sdk-utils
 
 Common JavaScript SDK utils
 
@@ -13,7 +13,7 @@ Common JavaScript SDK utils
 
 ### `logger([debug])`
 
-This function is a direct export of [`@percy/logger`](./packages/logger).
+This function is a direct export of [`@addepar/percy-logger`](./packages/logger).
 
 ### `percy`
 
@@ -21,7 +21,7 @@ This object contains information about the local Percy environment and is update
 [`isPercyEnabled`](#ispercyenabled) is called for the first time.
 
 ``` js
-import { percy } from '@percy/sdk-utils'
+import { percy } from '@addepar/percy-sdk-utils'
 
 // reflects/updates process.env.PERCY_SERVER_ADDRESS
 percy.address === 'http://localhost:5338'
@@ -35,7 +35,7 @@ percy.version.toString() === '1.2.3'
 percy.config === {} // .percy.yml config
 
 // updated after fetchPercyDOM() is called
-percy.domScript === fs.readFile(require.resolve('@percy/dom'))
+percy.domScript === fs.readFile(require.resolve('@addepar/percy-dom'))
 ```
 
 ### `isPercyEnabled()`
@@ -47,7 +47,7 @@ log a message unless the CLI loglevel is `quiet` or `silent`. Upon a successful 
 remote logging connection is also established.
 
 ``` js
-import { isPercyEnabled } from '@percy/sdk-utils'
+import { isPercyEnabled } from '@addepar/percy-sdk-utils'
 
 // CLI API not running
 await isPercyEnabled() === false
@@ -59,12 +59,12 @@ await isPercyEnabled() === true
 
 ### `fetchPercyDOM()`
 
-Fetches and returns the `@percy/dom` serialization script hosted by the local Percy API server. The
+Fetches and returns the `@addepar/percy-dom` serialization script hosted by the local Percy API server. The
 resulting string can be evaulated within a browser context to add the `PercyDOM.serialize` function
 to the global scope. Subsequent calls return the first cached result.
 
 ``` js
-import { fetchPercyDOM } from '@percy/sdk-utils'
+import { fetchPercyDOM } from '@addepar/percy-sdk-utils'
 
 let script = await fetchPercyDOM()
 
@@ -84,7 +84,7 @@ browser.executeScript(script)
 Posts snapshot options to the local Percy API server.
 
 ``` js
-import { postSnapshot } from '@percy/sdk-utils'
+import { postSnapshot } from '@addepar/percy-sdk-utils'
 
 await postSnapshot({
   // required
@@ -106,7 +106,7 @@ await postSnapshot({
 Sends a request to the local Percy API server. Used internally by the other SDK utils.
 
 ``` js
-import { request } from '@percy/sdk-utils'
+import { request } from '@addepar/percy-sdk-utils'
 
 await request('/percy/idle')
 await request('/percy/stop')
@@ -122,7 +122,7 @@ The returned object must contain the following normalized properties from the re
 `status`, `statusText`, `headers`, `body`
 
 ``` js
-import { request } from '@percy/sdk-utils'
+import { request } from '@addepar/percy-sdk-utils'
 
 // Cypress SDK example
 request.fetch = async function fetch(url, options) {

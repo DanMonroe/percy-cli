@@ -1,5 +1,5 @@
 import { withExample, withCSSOM, parseDOM } from './helpers';
-import serializeDOM from '@percy/dom';
+import serializeDOM from '@addepar/percy-dom';
 
 describe('serializeCSSOM', () => {
   beforeEach(() => {

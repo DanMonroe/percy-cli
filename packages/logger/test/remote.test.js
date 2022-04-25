@@ -1,5 +1,5 @@
 import helpers from './helpers.js';
-import logger from '@percy/logger';
+import logger from '@addepar/percy-logger';
 
 // very shallow mock websocket
 class MockSocket {

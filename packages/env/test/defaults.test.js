@@ -1,5 +1,5 @@
 import { mockgit } from './helpers.js';
-import PercyEnv from '@percy/env';
+import PercyEnv from '@addepar/percy-env';
 
 describe('Defaults', () => {
   let env;

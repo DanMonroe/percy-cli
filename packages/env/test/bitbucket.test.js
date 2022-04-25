@@ -1,4 +1,4 @@
-import PercyEnv from '@percy/env';
+import PercyEnv from '@addepar/percy-env';
 
 describe('Bitbucket', () => {
   let env;

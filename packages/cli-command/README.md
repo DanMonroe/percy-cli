@@ -1,4 +1,4 @@
-# @percy/cli-command
+# @addepar/percy-cli-command
 
 Percy CLI command parser and runner.
 
@@ -14,7 +14,7 @@ The `command` function accepts a name, definition, and callback and returns a ru
 accepts an array of command-line arguments.
 
 ``` js
-import command from '@percy/cli-command';
+import command from '@addepar/percy-cli-command';
 
 // example command runner
 const example = command('example', {
@@ -85,9 +85,9 @@ according to the command definition:
   determined by the arg's respective definition ([see below](#args)).
 - `argv` — An array of unknown arguments that were not parsed due to either the `loose` option or
   the presence of an end-of-arguments delimiter (`--`).
-- `percy` — An instance of `@percy/core` only present when a corresponding `percy` definition option
+- `percy` — An instance of `@addepar/percy-core` only present when a corresponding `percy` definition option
   is provided ([see below](#percy)).
-- `log` — A `@percy/logger` group namespaced under the command's `name`. The initial loglevel is
+- `log` — A `@addepar/percy-logger` group namespaced under the command's `name`. The initial loglevel is
   optionally determined by various global logging flags (`--verbose`, `--silent`, `--quiet`).
 - `exit` — Utility function to stop the execution of a command from within the runner. Accepts
   an exit code (default `1`) and an exit reason (default `'EEXIT: ${exitCode}'`). The function will
@@ -161,7 +161,7 @@ attribute name on the `callback` argument's `flags` property.
 
 ### Percy
 
-The `percy` definition option accepts an object consisting of `@percy/core` options. The presence of
+The `percy` definition option accepts an object consisting of `@addepar/percy-core` options. The presence of
 this option will add shared percy flags to accepted command-line arguments and provide the command
 callback with a percy instance initialized with the provided options.
 
@@ -170,7 +170,7 @@ percy instance will still be provided to the command callback when run. Regardle
 option, if the environment variable `PERCY_ENABLE` is `0`, the callback _will not_ receive a percy
 instance (and can act accordingly).
 
-- `percy` — Enables creation of a `@percy/core` instance initialized with provided options.
+- `percy` — Enables creation of a `@addepar/percy-core` instance initialized with provided options.
   - `discoveryFlags` — When `false` prevents percy discovery flags from being accepted, but will
     still allow other percy flags such as `--config` and `--dry-run`.
   - `...` — All other options are passed along to the new percy instance.
@@ -180,7 +180,7 @@ instance (and can act accordingly).
 Acceptable percy config file options can be extended before the file is loaded via
 `PercyConfig.addSchema()` and `PercyConfig.addMigration()`. These functions can be called before the
 command is run to achieve the same effect as including them in the command definition. However, the
-presence of a `percy` definition option will also signal `@percy/core` config schemas and migrations
+presence of a `percy` definition option will also signal `@addepar/percy-core` config schemas and migrations
 to be automatically registered before the following options are registered.
 
 - `config` — Percy config schemas and migrations to register while creating the command runner.
@@ -189,5 +189,5 @@ to be automatically registered before the following options are registered.
 
 Additionally, flags and positional arguments that define a `percyrc` option will have their
 associated values mapped to a corresponding `percy` property that is used when initializing a
-`@percy/core` instance. Provided options are validated against config schemas and are made available
+`@addepar/percy-core` instance. Provided options are validated against config schemas and are made available
 on the command callback argument's `percy.config` property.

@@ -1,5 +1,5 @@
 import { withExample, replaceDoctype } from './helpers';
-import serializeDOM from '@percy/dom';
+import serializeDOM from '@addepar/percy-dom';
 
 describe('serializeDOM', () => {
   it('always has a doctype', () => {

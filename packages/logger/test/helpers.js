@@ -1,5 +1,5 @@
-import logger from '@percy/logger';
-import { ANSI_REG } from '@percy/logger/utils';
+import logger from '@addepar/percy-logger';
+import { ANSI_REG } from '@addepar/percy-logger/utils';
 
 const ELAPSED_REG = /\s\S*?\(\d+ms\)\S*/;
 const NEWLINE_REG = /\r\n/g;
@@ -51,7 +51,7 @@ const helpers = {
     }
 
     if (process.env.__PERCY_BROWSERIFIED__) {
-      spy(Logger.prototype, 'write', function(lvl, msg) {
+      spy(Logger.prototype, 'write', function (lvl, msg) {
         let stdio = lvl === 'info' ? 'stdout' : 'stderr';
         helpers[stdio].push(sanitizeLog(msg, options));
         return this.write.originalValue.call(this, lvl, msg);
@@ -67,8 +67,8 @@ const helpers = {
         Logger[stdio] = Object.assign(new Writable(), {
           columns: options.isTTY ? 100 : null,
           isTTY: options.isTTY,
-          cursorTo() {},
-          clearLine() {},
+          cursorTo() { },
+          clearLine() { },
 
           _write(chunk, encoding, callback) {
             helpers[stdio].push(sanitizeLog(chunk.toString(), options));

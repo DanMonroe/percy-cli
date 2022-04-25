@@ -1,6 +1,6 @@
 import I from 'interactor.js';
 import { withExample, parseDOM } from './helpers';
-import serializeDOM from '@percy/dom';
+import serializeDOM from '@addepar/percy-dom';
 
 describe('serializeInputs', () => {
   let $;

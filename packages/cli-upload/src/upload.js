@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import command from '@percy/cli-command';
+import command from '@addepar/percy-cli-command';
 import * as UploadConfig from './config.js';
 
 const ALLOWED_FILE_TYPES = /\.(png|jpg|jpeg)$/i;
@@ -56,7 +56,7 @@ export const upload = command('upload', {
     schemas: [UploadConfig.schema],
     migrations: [UploadConfig.migration]
   }
-}, async function*({ flags, args, percy, log, exit }) {
+}, async function* ({ flags, args, percy, log, exit }) {
   if (!percy) exit(0, 'Percy is disabled');
   let config = percy.config.upload;
 

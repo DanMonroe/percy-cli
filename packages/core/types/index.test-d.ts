@@ -1,5 +1,5 @@
 import { expectType, expectError } from 'tsd';
-import Percy, { PercyOptions, PercyConfigOptions } from '@percy/core';
+import Percy, { PercyOptions, PercyConfigOptions } from '@addepar/percy-core';
 
 // PercyOptions
 const percyOptions: PercyOptions = {
@@ -99,10 +99,10 @@ expectType<Promise<void>>(percy.snapshot({
   url: 'http://localhost:3000',
   waitForTimeout: 1000,
   waitForSelector: '.some-selector',
-  execute() {},
+  execute() { },
   additionalSnapshots: [{
     name: 'test 2',
-    async execute() {}
+    async execute() { }
   }]
 }));
 
@@ -115,7 +115,7 @@ expectType<Promise<void>>(percy.snapshot({
   url: 'http://localhost:3000',
   additionalSnapshots: [{
     suffix: '- additional',
-    execute() {}
+    execute() { }
   }]
 }));
 
@@ -123,7 +123,7 @@ expectType<Promise<void>>(percy.snapshot({
   url: 'http://localhost:3000',
   additionalSnapshots: [{
     prefix: 'additional - ',
-    execute() {}
+    execute() { }
   }]
 }));
 
@@ -132,7 +132,7 @@ expectType<Promise<void>>(percy.snapshot({
   additionalSnapshots: [{
     prefix: '- ',
     suffix: ' -',
-    execute() {}
+    execute() { }
   }]
 }));
 
@@ -151,7 +151,7 @@ expectError(percy.snapshot({
 expectError(percy.snapshot({
   url: 'http://localhost:3000',
   additionalSnapshots: [{
-    execute() {}
+    execute() { }
   }]
 }));
 
@@ -167,7 +167,7 @@ expectError(percy.snapshot({
   additionalSnapshots: [{
     name: 'test snapshot',
     prefix: '- ',
-    execute() {}
+    execute() { }
   }]
 }));
 
@@ -176,7 +176,7 @@ expectError(percy.snapshot({
   additionalSnapshots: [{
     name: 'test snapshot',
     suffix: ' -',
-    execute() {}
+    execute() { }
   }]
 }));
 

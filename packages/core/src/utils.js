@@ -1,10 +1,10 @@
-import { sha256hash } from '@percy/client/utils';
+import { sha256hash } from '@addepar/percy-client/utils';
 
 export {
   request,
   getPackageJSON,
   hostnameMatches
-} from '@percy/client/utils';
+} from '@addepar/percy-client/utils';
 
 // Returns the hostname portion of a URL.
 export function hostname(url) {
@@ -69,7 +69,7 @@ export function generatePromise(gen) {
   };
 
   // handle cancelation errors by calling any cancel handlers
-  let cancelable = (async function*() {
+  let cancelable = (async function* () {
     try { return yield* gen; } catch (error) {
       if (error.canceled) {
         let cancelers = cancelable.cancelers || [];

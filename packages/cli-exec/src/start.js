@@ -1,4 +1,4 @@
-import command from '@percy/cli-command';
+import command from '@addepar/percy-cli-command';
 import * as common from './common.js';
 
 export const start = command('start', {
@@ -12,7 +12,7 @@ export const start = command('start', {
   percy: {
     server: true
   }
-}, async function*({ percy, exit }) {
+}, async function* ({ percy, exit }) {
   if (!percy) exit(0, 'Percy is disabled');
 
   // start percy

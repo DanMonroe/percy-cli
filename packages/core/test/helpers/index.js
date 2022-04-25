@@ -1,6 +1,6 @@
-import { resetPercyConfig, mockfs as mfs, fs } from '@percy/config/test/helpers';
-import logger from '@percy/logger/test/helpers';
-import api from '@percy/client/test/helpers';
+import { resetPercyConfig, mockfs as mfs, fs } from '@addepar/percy-config/test/helpers';
+import logger from '@addepar/percy-logger/test/helpers';
+import api from '@addepar/percy-client/test/helpers';
 import path from 'path';
 import url from 'url';
 
@@ -28,7 +28,7 @@ export async function setupTest({
   await mockfs(filesystem);
 }
 
-export * from '@percy/client/test/helpers';
+export * from '@addepar/percy-client/test/helpers';
 export { createTestServer } from './server.js';
 export { dedent } from './dedent.js';
 export { logger, fs };

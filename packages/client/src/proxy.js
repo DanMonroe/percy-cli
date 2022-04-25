@@ -2,7 +2,7 @@ import net from 'net';
 import tls from 'tls';
 import http from 'http';
 import https from 'https';
-import logger from '@percy/logger';
+import logger from '@addepar/percy-logger';
 
 const CRLF = '\r\n';
 const STATUS_REG = /^HTTP\/1.[01] (\d*)/;
@@ -36,8 +36,8 @@ export function hostnameMatches(patterns, url) {
 
     // hostnames are equal or end with a wildcard rule
     if (rule.hostname === subject.hostname ||
-        (rule.hostname.startsWith('.') &&
-         subject.hostname.endsWith(rule.hostname))) {
+      (rule.hostname.startsWith('.') &&
+        subject.hostname.endsWith(rule.hostname))) {
       return true;
     }
   }
@@ -183,7 +183,7 @@ export class ProxyHttpsAgent extends https.Agent {
       if (buffer.match(STATUS_REG)?.[1] !== '200') {
         return handleError(new Error(
           'Error establishing proxy connection. ' +
-            `Response from server was: ${buffer}`
+          `Response from server was: ${buffer}`
         ));
       }
 

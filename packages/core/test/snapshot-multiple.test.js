@@ -1,6 +1,6 @@
 import { fs, logger, setupTest, createTestServer } from './helpers/index.js';
-import { generatePromise } from '@percy/core/utils';
-import Percy from '@percy/core';
+import { generatePromise } from '@addepar/percy-core/utils';
+import Percy from '@addepar/percy-core';
 
 describe('Snapshot multiple', () => {
   let percy, server, sitemap;

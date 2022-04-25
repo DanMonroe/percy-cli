@@ -1,5 +1,5 @@
-import logger from '@percy/logger';
-import PercyConfig from '@percy/config';
+import logger from '@addepar/percy-logger';
+import PercyConfig from '@addepar/percy-config';
 import micromatch from 'micromatch';
 
 import {
@@ -49,7 +49,7 @@ export function snapshotMatches(snapshot, include, exclude) {
         try {
           let [, parsed = predicate, flags] = RE_REGEXP.exec(predicate) || [];
           result = new RegExp(parsed, flags).test(snapshot.name);
-        } catch {}
+        } catch { }
       }
 
       return result;

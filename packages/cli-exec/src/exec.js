@@ -1,4 +1,4 @@
-import command from '@percy/cli-command';
+import command from '@addepar/percy-cli-command';
 import * as common from './common.js';
 
 import start from './start.js';
@@ -33,7 +33,7 @@ export const exec = command('exec', {
   percy: {
     server: true
   }
-}, async function*({ flags, argv, env, percy, log, exit }) {
+}, async function* ({ flags, argv, env, percy, log, exit }) {
   let [command, ...args] = argv;
 
   // command is required

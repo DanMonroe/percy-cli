@@ -1,4 +1,4 @@
-import logger from '@percy/logger/test/helpers';
+import logger from '@addepar/percy-logger/test/helpers';
 import { configMigration } from '../../src/config.js';
 
 describe('Unit / Config Migration', () => {

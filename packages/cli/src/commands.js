@@ -3,7 +3,7 @@ import fs from 'fs';
 import url from 'url';
 import path from 'path';
 import Module from 'module';
-import { command, legacyCommand, logger } from '@percy/cli-command';
+import { command, legacyCommand, logger } from '@addepar/percy-cli-command';
 
 // Helper to simplify reducing async functions
 async function reduceAsync(iter, reducer, accum = []) {
@@ -115,7 +115,7 @@ export async function importCommands() {
   let cmdImports = await reduceAsync(cmdPkgs, async (pkgs, pkgPath) => {
     let pkg = JSON.parse(fs.readFileSync(path.join(pkgPath, 'package.json')));
     // do not include self
-    if (pkg.name === '@percy/cli') return pkgs;
+    if (pkg.name === '@addepar/percy-cli') return pkgs;
 
     // support legacy oclif percy commands
     if (pkg.oclif?.bin === 'percy') {
@@ -136,9 +136,9 @@ export async function importCommands() {
     }
 
     // overwrite any found package of the same name
-    if (pkg['@percy/cli']?.commands) {
+    if (pkg['@addepar/percy-cli']?.commands) {
       pkgs.set(pkg.name, () => Promise.all(
-        pkg['@percy/cli'].commands.map(async cmdPath => {
+        pkg['@addepar/percy-cli'].commands.map(async cmdPath => {
           let modulePath = path.join(pkgPath, cmdPath);
           let module = await import(url.pathToFileURL(modulePath).href);
           module.default.packageInformation ||= pkg;

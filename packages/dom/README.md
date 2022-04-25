@@ -1,4 +1,4 @@
-# @percy/dom
+# @addepar/percy-dom
 
 Serializes a document's DOM into a DOM string suitable for re-rendering.
 
@@ -19,7 +19,7 @@ Serializes a document's DOM into a DOM string suitable for re-rendering.
 ### ES6 imports
 
 ```js
-import serializeDOM from '@percy/dom';
+import serializeDOM from '@addepar/percy-dom';
 
 // optional arguments shown with defaults
 const domSnapshot = serializeDOM(options)
@@ -29,7 +29,7 @@ const domSnapshot = serializeDOM(options)
 
 ```js
 // via puppeteer
-await page.addScriptTag({ path: require.resolve('@percy/dom') })
+await page.addScriptTag({ path: require.resolve('@addepar/percy-dom') })
 const domSnapshot = await page.evaluate(() => PercyDOM.serialize(options))
 ```
 

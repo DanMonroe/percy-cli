@@ -2,7 +2,7 @@ import fs from 'fs';
 import net from 'net';
 import http from 'http';
 import https from 'https';
-import { request, ProxyHttpAgent } from '@percy/client/utils';
+import { request, ProxyHttpAgent } from '@addepar/percy-client/utils';
 import { port, href, proxyAgentFor } from '../../src/proxy.js';
 
 const ssl = {
@@ -102,7 +102,7 @@ function createProxyServer({ type, port, ...options }) {
 
   proxy.server.on('connect', (req, client, head) => {
     // a shutdown error is sometimes thrown when the test proxy closes
-    client.on('error', e => {});
+    client.on('error', e => { });
 
     if (options.shouldConnect && !options.shouldConnect(req)) {
       client.write('HTTP/1.1 403 FORBIDDEN\r\n');
@@ -213,7 +213,7 @@ describe('Unit / Request', () => {
 
     it('automatically retries specific request errors', async () => {
       let errors = ['ECONNREFUSED', 'EHOSTUNREACH', 'ECONNRESET', 'EAI_AGAIN'];
-      let spy = spyOn(http.OutgoingMessage.prototype, 'end').and.callFake(function() {
+      let spy = spyOn(http.OutgoingMessage.prototype, 'end').and.callFake(function () {
         if (errors.length) this.emit('error', { code: errors.splice(0, 1)[0] });
         else http.OutgoingMessage.prototype.end.and.originalFn.apply(this, arguments);
       });
@@ -246,7 +246,7 @@ describe('Unit / Request', () => {
 
     it('does not retry unknown errors', async () => {
       let spy = spyOn(http.OutgoingMessage.prototype, 'end').and
-        .callFake(function() { this.emit('error', new Error('Unknown')); });
+        .callFake(function () { this.emit('error', new Error('Unknown')); });
 
       await expectAsync(server.request('/idk'))
         .toBeRejectedWithError('Unknown');
@@ -448,7 +448,7 @@ describe('Unit / Request', () => {
 
               // sabotage the underlying socket.write method to emit an error
               spyOn(net.Socket.prototype, 'write')
-                .and.callFake(function() {
+                .and.callFake(function () {
                   this.emit('error', error);
                 });
 

@@ -1,9 +1,9 @@
-import { logger, setupTest, fs } from '@percy/cli-command/test/helpers';
-import snapshot from '@percy/cli-snapshot';
+import { logger, setupTest, fs } from '@addepar/percy-cli-command/test/helpers';
+import snapshot from '@addepar/percy-cli-snapshot';
 
 describe('percy snapshot <directory>', () => {
   beforeEach(async () => {
-    snapshot.packageInformation = { name: '@percy/cli-snapshot' };
+    snapshot.packageInformation = { name: '@addepar/percy-cli-snapshot' };
     process.env.PERCY_TOKEN = '<<PERCY_TOKEN>>';
 
     await setupTest({
@@ -32,7 +32,7 @@ describe('percy snapshot <directory>', () => {
     expect(logger.stdout).toEqual([]);
     expect(logger.stderr).toEqual([
       '[percy] Error: The \'--base-url\' flag must start with a ' +
-        'forward slash (/) when providing a static directory'
+      'forward slash (/) when providing a static directory'
     ]);
   });
 

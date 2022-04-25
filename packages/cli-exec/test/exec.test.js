@@ -1,5 +1,5 @@
-import { logger, api, setupTest } from '@percy/cli-command/test/helpers';
-import exec from '@percy/cli-exec';
+import { logger, api, setupTest } from '@addepar/percy-cli-command/test/helpers';
+import exec from '@addepar/percy-cli-exec';
 
 describe('percy exec', () => {
   beforeEach(async () => {

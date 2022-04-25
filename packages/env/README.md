@@ -1,7 +1,7 @@
-# @percy/env
+# @addepar/percy-env
 
 This package provides various CI/CD support for Percy by coalescing different environment variables
-into a common interface for consumption by `@percy/client`.
+into a common interface for consumption by `@addepar/percy-client`.
 
 ## Supported Environments
 

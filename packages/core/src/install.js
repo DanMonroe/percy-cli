@@ -2,8 +2,8 @@ import fs from 'fs';
 import url from 'url';
 import path from 'path';
 import https from 'https';
-import logger from '@percy/logger';
-import { ProxyHttpsAgent } from '@percy/client/utils';
+import logger from '@addepar/percy-logger';
+import { ProxyHttpsAgent } from '@addepar/percy-client/utils';
 
 // Formats a raw byte integer as a string
 function formatBytes(int) {
@@ -125,7 +125,7 @@ export async function download({
 
 // Installs a revision of Chromium to a local directory
 export function chromium({
-  // default directory is within @percy/core package root
+  // default directory is within @addepar/percy-core package root
   directory = path.resolve(url.fileURLToPath(import.meta.url), '../../.local-chromium'),
   // default chromium revision by platform (see chromium.revisions)
   revision = selectByPlatform(chromium.revisions)

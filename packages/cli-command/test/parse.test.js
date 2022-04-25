@@ -1,5 +1,5 @@
 import { logger } from './helpers.js';
-import command from '@percy/cli-command';
+import command from '@addepar/percy-cli-command';
 
 describe('Option parsing', () => {
   let cmd = (name, def) => {
@@ -302,11 +302,11 @@ describe('Option parsing', () => {
       "[percy] Warning: The '--wrong-1 <value>' option will be removed in a future release.",
       "[percy] Warning: The '--wrong-2 <value>' option will be removed in 1.0.0.",
       "[percy] Warning: The '--wrong-3 <value>' option will be removed in 1.0.0." +
-        " Use '--not-wrong-1 <value>' instead.",
+      " Use '--not-wrong-1 <value>' instead.",
       "[percy] Warning: The '--wrong-4 <value>' option will be removed in 1.0.0." +
-        ' Try something else.',
+      ' Try something else.',
       "[percy] Warning: The 'wrong-arg-1' argument will be removed in 1.0.0." +
-        " Use '--not-wrong-2 <value>' instead.",
+      " Use '--not-wrong-2 <value>' instead.",
       "[percy] Warning: The 'wrong-arg-2' argument will be removed in 1.0.0."
     ]);
 

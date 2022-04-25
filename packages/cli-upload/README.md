@@ -1,4 +1,4 @@
-# @percy/cli-upload
+# @addepar/percy-cli-upload
 
 Percy CLI command to uploade a directory of static images to Percy for diffing.
 

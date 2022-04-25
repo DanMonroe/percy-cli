@@ -12,7 +12,7 @@ try {
     }));
   }
 } catch (error) {
-  const { logger } = await import('@percy/logger');
+  const { logger } = await import('@addepar/percy-logger');
   const log = logger('core:post-install');
 
   log.error('Encountered an error while installing Chromium');

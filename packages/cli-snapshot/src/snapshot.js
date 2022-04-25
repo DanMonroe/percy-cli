@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import command from '@percy/cli-command';
+import command from '@addepar/percy-cli-command';
 import * as SnapshotConfig from './config.js';
 
 export const snapshot = command('snapshot', {
@@ -65,7 +65,7 @@ export const snapshot = command('snapshot', {
     schemas: [SnapshotConfig.configSchema],
     migrations: [SnapshotConfig.configMigration]
   }
-}, async function*({ percy, args, flags, log, exit }) {
+}, async function* ({ percy, args, flags, log, exit }) {
   let { include, exclude, baseUrl, cleanUrls } = flags;
   let { file, serve, sitemap } = args;
 

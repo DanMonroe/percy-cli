@@ -1,6 +1,6 @@
-import PercyClient from '@percy/client';
-import PercyConfig from '@percy/config';
-import logger from '@percy/logger';
+import PercyClient from '@addepar/percy-client';
+import PercyConfig from '@addepar/percy-config';
+import logger from '@addepar/percy-logger';
 import Queue from './queue.js';
 import Browser from './browser.js';
 
@@ -46,7 +46,7 @@ export class Percy {
     dryRun,
     // configuration filepath
     config,
-    // provided to @percy/client
+    // provided to @addepar/percy-client
     token,
     clientInfo = '',
     environmentInfo = '',
@@ -379,7 +379,7 @@ export class Percy {
     this.client.addEnvironmentInfo(options.environmentInfo);
 
     // return an async generator to allow cancelation
-    return (async function*() {
+    return (async function* () {
       let server = 'serve' in options ? (
         await createStaticServer(options).listen()
       ) : null;
@@ -423,7 +423,7 @@ export class Percy {
     // cancel any existing snapshot with the same name
     this._cancelSnapshot(snapshot);
 
-    return this.#snapshots.push(`snapshot/${snapshot.name}`, async function*() {
+    return this.#snapshots.push(`snapshot/${snapshot.name}`, async function* () {
       try {
         yield* discoverSnapshotResources(this, snapshot, (snap, resources) => {
           if (!this.dryRun) this.log.info(`Snapshot taken: ${snap.name}`, snap.meta);

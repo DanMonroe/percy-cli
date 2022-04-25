@@ -1,7 +1,7 @@
 import path from 'path';
-import PercyConfig from '@percy/config';
+import PercyConfig from '@addepar/percy-config';
 import { logger, setupTest, fs } from './helpers/index.js';
-import Percy from '@percy/core';
+import Percy from '@addepar/percy-core';
 
 describe('API Server', () => {
   let percy;
@@ -39,7 +39,7 @@ describe('API Server', () => {
   });
 
   it('has a /healthcheck endpoint', async () => {
-    let { getPackageJSON } = await import('@percy/client/utils');
+    let { getPackageJSON } = await import('@addepar/percy-client/utils');
     let pkg = getPackageJSON(import.meta.url);
     await percy.start();
 
@@ -91,7 +91,7 @@ describe('API Server', () => {
     expect(percy.idle).toHaveBeenCalled();
   });
 
-  it('serves the @percy/dom bundle', async () => {
+  it('serves the @addepar/percy-dom bundle', async () => {
     await percy.start();
 
     await expectAsync(request('/percy/dom.js')).toBeResolvedTo(
@@ -109,7 +109,7 @@ describe('API Server', () => {
     );
 
     expect(logger.stderr).toEqual(['[percy] Warning: ' + [
-      'It looks like you’re using @percy/cli with an older SDK.',
+      'It looks like you’re using @addepar/percy-cli with an older SDK.',
       'Please upgrade to the latest version to fix this warning.',
       'See these docs for more info: https:docs.percy.io/docs/migrating-to-percy-cli'
     ].join(' ')]);
@@ -192,7 +192,7 @@ describe('API Server', () => {
 
       exec(`node ${args.join(' ')} --eval "${[
         "import WebSocket from 'ws';",
-        "import logger from '@percy/logger';",
+        "import logger from '@addepar/percy-logger';",
         "let ws = new WebSocket('ws://localhost:1337');",
         "logger.loglevel('debug');",
         'await logger.remote(() => ws);',

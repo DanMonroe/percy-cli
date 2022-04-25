@@ -1,5 +1,5 @@
 {
-  "name": "@percy/sdk-utils",
+  "name": "@addepar/percy-sdk-utils",
   "version": "1.0.9-addepar.0",
   "license": "MIT",
   "repository": {
@@ -47,17 +47,17 @@
     },
     "test": {
       "external": [
-        "@percy/logger",
+        "@addepar/percy-logger",
         "test/server(.js)?"
       ],
       "output": {
         "globals": {
-          "@percy/logger": "PercySDKUtils.logger"
+          "@addepar/percy-logger": "PercySDKUtils.logger"
         }
       }
     }
   },
   "dependencies": {
-    "@percy/logger": "^1.0.9-addepar.0"
+    "@addepar/percy-logger": "^1.0.9-addepar.0"
   }
 }

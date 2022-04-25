@@ -1,24 +1,24 @@
 import fs from 'fs';
 import path from 'path';
 import { createRequire } from 'module';
-import logger from '@percy/logger';
+import logger from '@addepar/percy-logger';
 import { getPackageJSON } from './utils.js';
 import Server from './server.js';
 
 // need require.resolve until import.meta.resolve can be transpiled
-export const PERCY_DOM = createRequire(import.meta.url).resolve('@percy/dom');
+export const PERCY_DOM = createRequire(import.meta.url).resolve('@addepar/percy-dom');
 
 // Create a Percy CLI API server instance
 export function createPercyServer(percy, port) {
   let pkg = getPackageJSON(import.meta.url);
 
   return new Server({ port })
-  // facilitate logger websocket connections
+    // facilitate logger websocket connections
     .websocket(ws => logger.connect(ws))
-  // general middleware
+    // general middleware
     .route((req, res, next) => {
       // treat all request bodies as json
-      if (req.body) try { req.body = JSON.parse(req.body); } catch {}
+      if (req.body) try { req.body = JSON.parse(req.body); } catch { }
 
       // add version header
       res.setHeader('Access-Control-Expose-Headers', '*, X-Percy-Core-Version');
@@ -31,30 +31,30 @@ export function createPercyServer(percy, port) {
         success: false
       }));
     })
-  // healthcheck returns basic information
+    // healthcheck returns basic information
     .route('get', '/percy/healthcheck', (req, res) => res.json(200, {
       loglevel: percy.loglevel(),
       config: percy.config,
       build: percy.build,
       success: true
     }))
-  // get or set config options
+    // get or set config options
     .route(['get', 'post'], '/percy/config', async (req, res) => res.json(200, {
       config: req.body ? await percy.setConfig(req.body) : percy.config,
       success: true
     }))
-  // responds once idle (may take a long time)
+    // responds once idle (may take a long time)
     .route('get', '/percy/idle', async (req, res) => res.json(200, {
       success: await percy.idle().then(() => true)
     }))
-  // convenient @percy/dom bundle
+    // convenient @addepar/percy-dom bundle
     .route('get', '/percy/dom.js', (req, res) => {
       return res.file(200, PERCY_DOM);
     })
-  // legacy agent wrapper for @percy/dom
+    // legacy agent wrapper for @addepar/percy-dom
     .route('get', '/percy-agent.js', async (req, res) => {
       logger('core:server').deprecated([
-        'It looks like you’re using @percy/cli with an older SDK.',
+        'It looks like you’re using @addepar/percy-cli with an older SDK.',
         'Please upgrade to the latest version to fix this warning.',
         'See these docs for more info: https:docs.percy.io/docs/migrating-to-percy-cli'
       ].join(' '));
@@ -63,13 +63,13 @@ export function createPercyServer(percy, port) {
       let wrapper = '(window.PercyAgent = class { snapshot(n, o) { return PercyDOM.serialize(o); } });';
       return res.send(200, 'applicaton/javascript', content.concat(wrapper));
     })
-  // post one or more snapshots
+    // post one or more snapshots
     .route('post', '/percy/snapshot', async (req, res) => {
       let snapshot = percy.snapshot(req.body);
       if (!req.url.searchParams.has('async')) await snapshot;
       return res.json(200, { success: true });
     })
-  // stops percy at the end of the current event loop
+    // stops percy at the end of the current event loop
     .route('/percy/stop', (req, res) => {
       setImmediate(() => percy.stop());
       return res.json(200, { success: true });

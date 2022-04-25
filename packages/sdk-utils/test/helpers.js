@@ -1,5 +1,5 @@
-import logger from '@percy/logger/test/helpers';
-import utils from '@percy/sdk-utils';
+import logger from '@addepar/percy-logger/test/helpers';
+import utils from '@addepar/percy-sdk-utils';
 
 export const helpers = {
   logger,

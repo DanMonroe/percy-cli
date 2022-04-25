@@ -1,6 +1,6 @@
 import path from 'path';
-import { PercyConfig } from '@percy/cli-command';
-import { fs, logger, setupTest } from '@percy/cli-command/test/helpers';
+import { PercyConfig } from '@addepar/percy-cli-command';
+import { fs, logger, setupTest } from '@addepar/percy-cli-command/test/helpers';
 import validate from '../src/validate.js';
 
 describe('percy config:validate', () => {

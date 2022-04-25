@@ -1,5 +1,5 @@
 import { expectType, expectError } from 'tsd';
-import PercyConfig, { PercyConfigObject } from '@percy/config';
+import PercyConfig, { PercyConfigObject } from '@addepar/percy-config';
 
 // .load()
 expectType<PercyConfigObject>(PercyConfig.load());

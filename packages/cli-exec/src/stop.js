@@ -1,4 +1,4 @@
-import command from '@percy/cli-command';
+import command from '@addepar/percy-cli-command';
 import * as common from './common.js';
 
 export const stop = command('stop', {
@@ -8,7 +8,7 @@ export const stop = command('stop', {
 }, async ({ flags, percy, log, exit }) => {
   if (!percy) exit(0, 'Percy is disabled');
 
-  let { request } = await import('@percy/cli-command/utils');
+  let { request } = await import('@addepar/percy-cli-command/utils');
   let stop = `http://localhost:${flags.port}/percy/stop`;
   let ping = `http://localhost:${flags.port}/percy/healthcheck`;
 

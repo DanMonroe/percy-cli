@@ -1,6 +1,6 @@
 import I, { when } from 'interactor.js';
 import { assert, withExample, parseDOM } from './helpers';
-import serializeDOM from '@percy/dom';
+import serializeDOM from '@addepar/percy-dom';
 
 describe('serializeFrames', () => {
   let $;
@@ -13,7 +13,7 @@ describe('serializeFrames', () => {
     return $frame;
   }, 5000);
 
-  beforeEach(async function() {
+  beforeEach(async function () {
     withExample(`
       <iframe id="frame-external" src="https://example.com"></iframe>
       <iframe id="frame-external-fail" src="https://google.com"></iframe>

@@ -1,4 +1,4 @@
-import command from '@percy/cli-command';
+import command from '@addepar/percy-cli-command';
 
 export const wait = command('wait', {
   description: 'Wait for a build to be finished',
@@ -45,7 +45,7 @@ export const wait = command('wait', {
   ],
 
   percy: true
-}, async function*({ flags, percy, log, exit }) {
+}, async function* ({ flags, percy, log, exit }) {
   if (!percy) exit(0, 'Percy is disabled');
 
   // do not wait directly on the promise as to not block the event loop

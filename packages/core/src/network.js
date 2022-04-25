@@ -1,4 +1,4 @@
-import logger from '@percy/logger';
+import logger from '@addepar/percy-logger';
 import { waitFor } from './utils.js';
 import {
   createRequestHandler,
@@ -138,7 +138,7 @@ export class Network {
 
     // guard against redirects with the same requestId
     if (pending?.request.url === event.request.url &&
-        pending.request.method === event.request.method) {
+      pending.request.method === event.request.method) {
       await this._handleRequest(session, { ...pending, resourceType, interceptId });
     } else {
       // track the session that intercepted the request

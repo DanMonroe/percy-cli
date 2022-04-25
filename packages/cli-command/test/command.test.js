@@ -1,5 +1,5 @@
 import { logger, dedent } from './helpers.js';
-import command from '@percy/cli-command';
+import command from '@addepar/percy-cli-command';
 
 describe('Command', () => {
   beforeEach(async () => {
@@ -60,7 +60,7 @@ describe('Command', () => {
         short: 'q',
         description: 'Replaces common short flag'
       }]
-    }, () => {});
+    }, () => { });
 
     await test(['--help']);
 
@@ -88,7 +88,7 @@ describe('Command', () => {
 
     await test();
 
-    let { Percy } = await import('@percy/core');
+    let { Percy } = await import('@addepar/percy-core');
     expect(test.percy).toBeInstanceOf(Percy);
   });
 
@@ -216,7 +216,7 @@ describe('Command', () => {
   it('handles interrupting generator actions', async () => {
     let sleep = (ms, v) => new Promise(r => setTimeout(r, ms, v));
 
-    let test = command('test', {}, async function*() {
+    let test = command('test', {}, async function* () {
       try {
         test.state = 'starting';
         test.state = yield sleep(100, 'started');

@@ -1,7 +1,7 @@
 import fs from 'fs';
-import PercyEnv from '@percy/env';
-import { git } from '@percy/env/utils';
-import logger from '@percy/logger';
+import PercyEnv from '@addepar/percy-env';
+import { git } from '@addepar/percy-env/utils';
+import logger from '@addepar/percy-logger';
 
 import {
   pool,
@@ -32,7 +32,7 @@ function validateProjectPath(path) {
 }
 
 // PercyClient is used to communicate with the Percy API to create and finalize
-// builds and snapshot. Uses @percy/env to collect environment information used
+// builds and snapshot. Uses @addepar/percy-env to collect environment information used
 // during build creation.
 export class PercyClient {
   log = logger('client');
@@ -223,7 +223,7 @@ export class PercyClient {
         if (updated) {
           t = Date.now();
 
-        // no new data within the timeout
+          // no new data within the timeout
         } else if (Date.now() - t >= timeout) {
           throw new Error('Timeout exceeded without an update');
         }
@@ -237,7 +237,7 @@ export class PercyClient {
         if (pending) {
           return setTimeout(poll, interval, data, t);
 
-        // build finished
+          // build finished
         } else {
           // ensure progress is called at least once
           if (!last) onProgress?.(data);
@@ -275,7 +275,7 @@ export class PercyClient {
 
     this.log.debug(`Uploading resources for ${buildId}...`);
 
-    return pool(function*() {
+    return pool(function* () {
       for (let resource of resources) {
         yield this.uploadResource(buildId, resource);
       }

@@ -1,7 +1,7 @@
-import { merge } from '@percy/config/utils';
+import { merge } from '@addepar/percy-config/utils';
 import { command } from './command.js';
 
-// Legacy flags for older commands that inadvertently import a newer @percy/cli-command
+// Legacy flags for older commands that inadvertently import a newer @addepar/percy-cli-command
 export const legacyFlags = {
   config: {},
   logging: {},
@@ -53,7 +53,7 @@ export function legacyCommand(name, constructor) {
     percy: constructor.flags?.__percy__ ?? true,
     loose: constructor.strict === false,
     legacy: true
-  }, async function*(ctx) {
+  }, async function* (ctx) {
     let instance = new constructor();
     let error;
 

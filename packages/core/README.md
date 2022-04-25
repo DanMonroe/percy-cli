@@ -1,7 +1,7 @@
-# @percy/core
+# @addepar/percy-core
 
 The core component of Percy's CLI and SDKs that handles creating builds, discovering snapshot
-assets, uploading snapshots, and finalizing builds. Uses `@percy/client` for API communication, a
+assets, uploading snapshots, and finalizing builds. Uses `@addepar/percy-client` for API communication, a
 Chromium browser for asset discovery, and starts a local API server for posting snapshots from
 other processes.
 
@@ -20,7 +20,7 @@ A `Percy` class instance can manage a Percy build, take page snapshots, and perf
 discovery. It also hosts a local API server for Percy SDKs to communicate with.
 
 ``` js
-import Percy from '@percy/core'
+import Percy from '@addepar/percy-core'
 
 // create a new instance
 const percy = new Percy(percyOptions)
@@ -83,7 +83,7 @@ Starting a `Percy` instance will start a local API server unless `server` is `fa
 be found at `http://localhost:5338/` or at the provided `port` number.
 
 - GET `/percy/healthcheck` – Responds with information about the running instance
-- GET `/percy/dom.js` – Responds with the [`@percy/dom`](./packages/dom) library
+- GET `/percy/dom.js` – Responds with the [`@addepar/percy-dom`](./packages/dom) library
 - GET `/percy/idle` - Responds when the running instance is [idle](#idle)
 - POST `/percy/snapshot` – Calls [`#snapshot()`](#snapshotoptions) with provided snapshot options
 - POST `/percy/stop` - Remotely [stops](#stopforce) the running `Percy` instance
@@ -264,7 +264,7 @@ time Percy runs without it.
 
 If the environment variable `PERCY_POSTINSTALL_BROWSER` is present and truthy, then the browser will
 be downloaded after the package is installed to allow it to be cached. You can also require
-`@percy/core/post-install` within another node module to trigger the browser download manually.
+`@addepar/percy-core/post-install` within another node module to trigger the browser download manually.
 
 ### Skipping discovery browser download
 

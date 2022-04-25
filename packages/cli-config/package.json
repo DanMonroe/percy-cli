@@ -1,5 +1,5 @@
 {
-  "name": "@percy/cli-config",
+  "name": "@addepar/percy-cli-config",
   "version": "1.0.9-addepar.0",
   "license": "MIT",
   "repository": {
@@ -26,12 +26,12 @@
     "test": "node ../../scripts/test",
     "test:coverage": "yarn test --coverage"
   },
-  "@percy/cli": {
+  "@addepar/percy-cli": {
     "commands": [
       "./dist/config.js"
     ]
   },
   "dependencies": {
-    "@percy/cli-command": "^1.0.9-addepar.0"
+    "@addepar/percy-cli-command": "^1.0.9-addepar.0"
   }
 }

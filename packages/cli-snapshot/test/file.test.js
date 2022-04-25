@@ -1,12 +1,12 @@
 import { inspect } from 'util';
-import { fs, logger, setupTest, createTestServer } from '@percy/cli-command/test/helpers';
-import snapshot from '@percy/cli-snapshot';
+import { fs, logger, setupTest, createTestServer } from '@addepar/percy-cli-command/test/helpers';
+import snapshot from '@addepar/percy-cli-snapshot';
 
 describe('percy snapshot <file>', () => {
   let server;
 
   beforeEach(async () => {
-    snapshot.packageInformation = { name: '@percy/cli-snapshot' };
+    snapshot.packageInformation = { name: '@addepar/percy-cli-snapshot' };
     process.env.PERCY_TOKEN = '<<PERCY_TOKEN>>';
 
     server = await createTestServer({
@@ -55,7 +55,7 @@ describe('percy snapshot <file>', () => {
     expect(logger.stdout).toEqual([]);
     expect(logger.stderr).toEqual([
       '[percy] Error: The \'--base-url\' flag must include ' +
-        'a protocol and hostname when providing a list of snapshots'
+      'a protocol and hostname when providing a list of snapshots'
     ]);
   });
 

@@ -1,4 +1,4 @@
-import { logger, mockRequests, mockfs, fs } from '@percy/cli-command/test/helpers';
+import { logger, mockRequests, mockfs, fs } from '@addepar/percy-cli-command/test/helpers';
 import { mockUpdateCache } from './helpers.js';
 import { checkForUpdate } from '../src/update.js';
 
@@ -6,7 +6,7 @@ describe('CLI update check', () => {
   let ghAPI;
 
   beforeEach(async () => {
-    let pkg = { name: '@percy/cli', version: '1.0.0' };
+    let pkg = { name: '@addepar/percy-cli', version: '1.0.0' };
     await mockfs({ './package.json': JSON.stringify(pkg) });
     ghAPI = await mockRequests('https://api.github.com');
     await logger.mock();
@@ -58,7 +58,7 @@ describe('CLI update check', () => {
     await checkForUpdate();
     expect(logger.stdout).toEqual([]);
     expect(logger.stderr).toEqual([
-      '', '[percy] A new version of @percy/cli is available! 1.0.0 -> 1.1.0', ''
+      '', '[percy] A new version of @addepar/percy-cli is available! 1.0.0 -> 1.1.0', ''
     ]);
   });
 
@@ -68,8 +68,8 @@ describe('CLI update check', () => {
     await checkForUpdate();
     expect(logger.stdout).toEqual([]);
     expect(logger.stderr).toEqual([
-      '', '[percy] Heads up! The current version of @percy/cli ' +
-        'is more than 10 releases behind! 1.0.0 -> 2.0.0', ''
+      '', '[percy] Heads up! The current version of @addepar/percy-cli ' +
+      'is more than 10 releases behind! 1.0.0 -> 2.0.0', ''
     ]);
   });
 

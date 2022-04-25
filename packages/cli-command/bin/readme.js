@@ -12,9 +12,9 @@ async function updateReadmeCommands(cwd = process.cwd()) {
   let toc = [];
 
   let pkg = JSON.parse(fs.readFileSync(pkgPath));
-  if (!pkg['@percy/cli']?.commands) return '';
+  if (!pkg['@addepar/percy-cli']?.commands) return '';
 
-  for (let cmdPath of pkg['@percy/cli'].commands) {
+  for (let cmdPath of pkg['@addepar/percy-cli'].commands) {
     let cmdURL = url.pathToFileURL(path.join(cwd, cmdPath));
     let { default: command } = await import(cmdURL.href);
     command = { ...command, parent: { name: 'percy' } };

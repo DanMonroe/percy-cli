@@ -1,7 +1,7 @@
-import logger from '@percy/logger';
-import PercyConfig from '@percy/config';
-import { set, del } from '@percy/config/utils';
-import * as CoreConfig from '@percy/core/config';
+import logger from '@addepar/percy-logger';
+import PercyConfig from '@addepar/percy-config';
+import { set, del } from '@addepar/percy-config/utils';
+import * as CoreConfig from '@addepar/percy-core/config';
 import * as builtInFlags from './flags.js';
 import formatHelp from './help.js';
 import parse from './parse.js';
@@ -73,8 +73,8 @@ async function handleProcessSignals(callback) {
 
     // run any returned generator
     if (typeof gen?.next === 'function' &&
-        (typeof gen[Symbol.iterator] === 'function' ||
-         typeof gen[Symbol.asyncIterator] === 'function')) {
+      (typeof gen[Symbol.iterator] === 'function' ||
+        typeof gen[Symbol.asyncIterator] === 'function')) {
       let result = await gen.next();
 
       while (!result.done) {
@@ -109,7 +109,7 @@ async function runCommandWithContext(parsed) {
 
   // automatically include a preconfigured percy instance
   if (def.percy) {
-    let { Percy } = await import('@percy/core');
+    let { Percy } = await import('@addepar/percy-core');
 
     // set defaults and prune preconfiguraton options
     let conf = del({ server: false, ...def.percy }, 'discoveryFlags');

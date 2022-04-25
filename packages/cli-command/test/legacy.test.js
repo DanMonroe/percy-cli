@@ -1,5 +1,5 @@
 import { logger, dedent } from './helpers.js';
-import { command, legacyCommand, flags } from '@percy/cli-command';
+import { command, legacyCommand, flags } from '@addepar/percy-cli-command';
 
 describe('Legacy support', () => {
   let test;
@@ -135,7 +135,7 @@ describe('Legacy support', () => {
 
     expect(logger.stderr).toEqual([
       "[percy] Warning: The '--foo <string>' option will be removed in 1.0.0." +
-        " Use '--value <string>' instead.",
+      " Use '--value <string>' instead.",
       "[percy] Warning: The '--bar' option will be removed in 1.0.0. Sorry.",
       "[percy] Warning: The '--baz' option will be removed in a future release."
     ]);

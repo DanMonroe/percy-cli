@@ -14,7 +14,7 @@ the command line.
 ## Installation
 
 ```sh-session
-$ npm install --save-dev @percy/cli
+$ npm install --save-dev @addepar/percy-cli
 ```
 
 ## Command Topics
@@ -30,14 +30,14 @@ $ npm install --save-dev @percy/cli
 In addition to the CLI packages, this repo contains core libraries responsible for Percy's CI/CD
 integrations, Percy API communication, DOM serialization, asset discovery, etc.
 
-- [`@percy/core`](./packages/core#readme) - performs snapshot asset discovery and uploading
-- [`@percy/client`](./packages/client#readme) - handles communicating with the Percy API
-- [`@percy/dom`](./packages/dom#readme) - serializes DOM snapshots
-- [`@percy/env`](./packages/env#readme) - captures CI build environment variables
-- [`@percy/config`](./packages/config#readme) - loads Percy configuration files
-- [`@percy/logger`](./packages/logger#readme) - common logger used throughout the CLI
-- [`@percy/sdk-utils`](./packages/sdk-utils#readme) - shared helpers for JavaScript SDKs
-- [`@percy/cli-command`](./packages/cli-command#readme) - Percy CLI command framework
+- [`@addepar/percy-core`](./packages/core#readme) - performs snapshot asset discovery and uploading
+- [`@addepar/percy-client`](./packages/client#readme) - handles communicating with the Percy API
+- [`@addepar/percy-dom`](./packages/dom#readme) - serializes DOM snapshots
+- [`@addepar/percy-env`](./packages/env#readme) - captures CI build environment variables
+- [`@addepar/percy-config`](./packages/config#readme) - loads Percy configuration files
+- [`@addepar/percy-logger`](./packages/logger#readme) - common logger used throughout the CLI
+- [`@addepar/percy-sdk-utils`](./packages/sdk-utils#readme) - shared helpers for JavaScript SDKs
+- [`@addepar/percy-cli-command`](./packages/cli-command#readme) - Percy CLI command framework
 
 ## Issues
 
@@ -65,5 +65,5 @@ Individual package scripts can be invoked using yarn's
 [workspace](https://classic.yarnpkg.com/en/docs/cli/workspace/) command. For example:
 
 ```sh-session
-$ yarn workspace @percy/core test
+$ yarn workspace @addepar/percy-core test
 ```

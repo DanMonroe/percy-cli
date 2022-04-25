@@ -1,6 +1,6 @@
-import logger from '@percy/logger/test/helpers';
+import logger from '@addepar/percy-logger/test/helpers';
 import { resetPercyConfig, mockfs, fs } from './helpers.js';
-import PercyConfig from '@percy/config';
+import PercyConfig from '@addepar/percy-config';
 
 describe('PercyConfig', () => {
   beforeEach(async () => {
@@ -307,7 +307,7 @@ describe('PercyConfig', () => {
       });
 
       expect(PercyConfig.validate({
-        func: () => {},
+        func: () => { },
         regex: /foobar/g
       })).toBeUndefined();
 
@@ -825,7 +825,7 @@ describe('PercyConfig', () => {
       expect(logger.stderr).toEqual([
         '[percy:config] Found config file: .old-version.yml',
         '[percy:config] Found older config file version, please run ' +
-          '`percy config:migrate` to update to the latest version',
+        '`percy config:migrate` to update to the latest version',
         '[percy:config] Using config:\n' + [
           '{',
           '  version: 2,',
@@ -931,7 +931,7 @@ describe('PercyConfig', () => {
       let config = {
         regex: /foobar/,
         date: new Date(),
-        foo: new (class {})(),
+        foo: new (class { })(),
         object: {},
         array: []
       };

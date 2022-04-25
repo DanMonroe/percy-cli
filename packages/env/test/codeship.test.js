@@ -1,9 +1,9 @@
-import PercyEnv from '@percy/env';
+import PercyEnv from '@addepar/percy-env';
 
 describe('CodeShip', () => {
   let env;
 
-  beforeEach(function() {
+  beforeEach(function () {
     env = new PercyEnv({
       PERCY_PARALLEL_TOTAL: '-1',
       CI_BRANCH: 'codeship-branch',

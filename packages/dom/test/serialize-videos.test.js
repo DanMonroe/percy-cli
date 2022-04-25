@@ -1,5 +1,5 @@
 import { withExample, parseDOM } from './helpers';
-import serializeDOM from '@percy/dom';
+import serializeDOM from '@addepar/percy-dom';
 
 let canPlay = $video => new Promise(resolve => {
   if ($video.readyState > 2) resolve();

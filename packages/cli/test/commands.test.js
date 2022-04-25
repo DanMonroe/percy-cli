@@ -1,5 +1,5 @@
 import path from 'path';
-import { logger, mockfs, fs } from '@percy/cli-command/test/helpers';
+import { logger, mockfs, fs } from '@addepar/percy-cli-command/test/helpers';
 import { mockModuleCommands, mockPnpCommands, mockLegacyCommands } from './helpers.js';
 import { importCommands } from '../src/commands.js';
 
@@ -12,7 +12,7 @@ describe('CLI commands', () => {
   describe('from a project', () => {
     it('imports the project command', async () => {
       fs.writeFileSync('command.js', 'module.exports.name = "foobar"');
-      fs.writeFileSync('package.json', '{ "@percy/cli": { "commands": ["./command.js"] } }');
+      fs.writeFileSync('package.json', '{ "@addepar/percy-cli": { "commands": ["./command.js"] } }');
 
       await expectAsync(importCommands()).toBeResolvedTo([
         jasmine.objectContaining({ name: 'foobar' })
@@ -25,11 +25,11 @@ describe('CLI commands', () => {
 
   describe('from node_modules', () => {
     const mockCmds = {
-      '@percy/cli-exec': { name: 'exec' },
-      '@percy/cli-config': { name: 'config' },
-      '@percy/storybook': { name: 'storybook' },
-      '@percy/core': null,
-      '@percy/cli': null,
+      '@addepar/percy-cli-exec': { name: 'exec' },
+      '@addepar/percy-cli-config': { name: 'config' },
+      '@addepar/percy-storybook': { name: 'storybook' },
+      '@addepar/percy-core': null,
+      '@addepar/percy-cli': null,
       'percy-cli-custom': { name: 'custom' },
       'percy-cli-other': null,
       'other-dep': null
@@ -67,7 +67,7 @@ describe('CLI commands', () => {
       await mockModuleCommands(path.resolve('.'), mockCmds);
       let cmds = await importCommands();
 
-      expect(cmds[0].packageInformation.name).toEqual('@percy/cli-config');
+      expect(cmds[0].packageInformation.name).toEqual('@addepar/percy-cli-config');
     });
 
     it('handles errors and logs debug info', async () => {
@@ -95,7 +95,7 @@ describe('CLI commands', () => {
 
     it('imports from the yarn pnp api', async () => {
       await mockPnpCommands(process.cwd(), {
-        '@percy/cli-plugin': { name: 'plugin1' },
+        '@addepar/percy-cli-plugin': { name: 'plugin1' },
         'percy-cli-plugin': { name: 'plugin2' },
         'not-cli-plugin': null
       });
@@ -110,9 +110,9 @@ describe('CLI commands', () => {
   describe('legacy support', () => {
     it('transforms oclif-like classes', async () => {
       await mockLegacyCommands(process.cwd(), {
-        '@percy/cli-legacy': { name: 'a' },
-        '@percy/cli-legacy-topic': { name: 'b', index: true },
-        '@percy/cli-legacy-index': { name: 'c', topic: true }
+        '@addepar/percy-cli-legacy': { name: 'a' },
+        '@addepar/percy-cli-legacy-topic': { name: 'b', index: true },
+        '@addepar/percy-cli-legacy-index': { name: 'c', topic: true }
       });
 
       let commands = await importCommands();

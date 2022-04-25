@@ -1,4 +1,4 @@
-import logger from '@percy/logger';
+import logger from '@addepar/percy-logger';
 import { normalizeURL, hostnameMatches, createResource } from './utils.js';
 
 const MAX_RESOURCE_SIZE = 15 * (1024 ** 2); // 15MB

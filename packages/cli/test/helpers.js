@@ -1,7 +1,7 @@
 import fs from 'fs';
 import url from 'url';
 import path from 'path';
-import { mockfs } from '@percy/cli-command/test/helpers';
+import { mockfs } from '@addepar/percy-cli-command/test/helpers';
 
 // Mocks the update cache file with the provided data and timestamp
 export function mockUpdateCache(data, createdAt = Date.now()) {
@@ -17,13 +17,13 @@ export async function mockModuleCommands(atPath, cmdMocks) {
 
   // for coverage
   write('.DS_Store', 'Not a directory');
-  write('@percy/.DS_Store', 'Not a directory');
+  write('@addepar/percy-.DS_Store', 'Not a directory');
 
   for (let [pkgName, cmdMock] of Object.entries(cmdMocks)) {
     let mockPkg = { name: pkgName };
 
     if (cmdMock) {
-      mockPkg['@percy/cli'] = { commands: ['command.js'] };
+      mockPkg['@addepar/percy-cli'] = { commands: ['command.js'] };
 
       write(`${pkgName}/command.js`, `export default {
         name: "${cmdMock.name}",
@@ -31,7 +31,7 @@ export async function mockModuleCommands(atPath, cmdMocks) {
       }`);
 
       if (cmdMock.multiple) {
-        mockPkg['@percy/cli'].commands.push('other.js');
+        mockPkg['@addepar/percy-cli'].commands.push('other.js');
         write(`${pkgName}/other.js`, `export default {
           name: "${cmdMock.name}-other"
         }`);
@@ -71,7 +71,7 @@ export async function mockPnpCommands(atPath, cmdMocks) {
     getPackageInformation.withArgs(pkgLoc).and.returnValue(pkgInfo);
 
     if (cmdMock) {
-      mockPkg['@percy/cli'] = { commands: ['command.js'] };
+      mockPkg['@addepar/percy-cli'] = { commands: ['command.js'] };
       write(`${pkgName}/command.js`, `export default { name: "${cmdMock.name}" }`);
     }
 

@@ -1,6 +1,6 @@
 import helpers from './helpers.js';
-import { colors } from '@percy/logger/utils';
-import logger from '@percy/logger';
+import { colors } from '@addepar/percy-logger/utils';
+import logger from '@addepar/percy-logger';
 
 describe('logger', () => {
   let log, inst;
@@ -164,7 +164,7 @@ describe('logger', () => {
       `[${colors.magenta('percy:other')}] long`);
     expect(logger.format('other', 'warn', 'elapsed', 100)).toEqual(
       `[${colors.magenta('percy:other')}] ` +
-        `${colors.yellow('elapsed')} ${colors.grey('(100ms)')}`);
+      `${colors.yellow('elapsed')} ${colors.grey('(100ms)')}`);
   });
 
   it('exposes own stdout and stderr streams', () => {

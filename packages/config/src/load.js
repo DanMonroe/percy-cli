@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { relative } from 'path';
 import { cosmiconfigSync } from 'cosmiconfig';
-import logger from '@percy/logger';
+import logger from '@addepar/percy-logger';
 import migrate from './migrate.js';
 import validate from './validate.js';
 import getDefaults from './defaults.js';

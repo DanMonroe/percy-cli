@@ -1,5 +1,5 @@
 import { logger, dedent } from './helpers.js';
-import command from '@percy/cli-command';
+import command from '@addepar/percy-cli-command';
 
 describe('Built-in flags:', () => {
   let test;

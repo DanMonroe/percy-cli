@@ -1,5 +1,5 @@
 {
-  "name": "@percy/config",
+  "name": "@addepar/percy-config",
   "version": "1.0.9-addepar.0",
   "license": "MIT",
   "repository": {
@@ -34,7 +34,7 @@
     "test:types": "tsd"
   },
   "dependencies": {
-    "@percy/logger": "^1.0.9-addepar.0",
+    "@addepar/percy-logger": "^1.0.9-addepar.0",
     "ajv": "^8.6.2",
     "cosmiconfig": "^7.0.0",
     "yaml": "^2.0.0"

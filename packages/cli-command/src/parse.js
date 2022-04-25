@@ -1,5 +1,5 @@
-import logger from '@percy/logger';
-import { camelcase } from '@percy/config/utils';
+import logger from '@addepar/percy-logger';
+import { camelcase } from '@addepar/percy-config/utils';
 import { flagUsage } from './help.js';
 
 // Make it possible to identify parse errors.
@@ -31,7 +31,7 @@ function isFlag(option) {
 async function maybeParseCommand(input, parsed) {
   // a flag, no defined commands, or already parsed other options
   if (isFlag(input[0]) || !parsed.command.definition.commands ||
-      parsed.operators.size || parsed.argv.length) {
+    parsed.operators.size || parsed.argv.length) {
     return;
   }
 
@@ -142,7 +142,7 @@ async function maybeParseFlag(input, parsed) {
 
   // implicit version and help support
   if (parsed.command.definition.version &&
-      (name === 'version' || short === 'V')) {
+    (name === 'version' || short === 'V')) {
     parsed.version = true;
   } else if (name === 'help' || short === 'h') {
     parsed.help = true;
@@ -208,7 +208,7 @@ async function maybeParseUnknown(input, parsed) {
 async function maybeParseEnv(option, parsed) {
   // no env option, already provided, or no defined env var
   if (!option.env || parsed.operators.has(option) ||
-      !(option.env in process.env)) {
+    !(option.env in process.env)) {
     return;
   }
 
@@ -392,7 +392,7 @@ export async function parse(command, argv) {
 
       // a deprecated arg might be mapped to a flag
       if (arg.deprecated?.[1]?.startsWith('--') &&
-          findFlag(arg.deprecated[1], parsed)) {
+        findFlag(arg.deprecated[1], parsed)) {
         parsed.flags[attributeName(arg, parsed)] = value;
       } else {
         parsed.args[attributeName(arg, parsed)] = value;

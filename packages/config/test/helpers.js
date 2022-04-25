@@ -4,7 +4,7 @@ import url from 'url';
 import path from 'path';
 import Module from 'module';
 
-// Reset various global @percy/config internals for testing
+// Reset various global @addepar/percy-config internals for testing
 export async function resetPercyConfig(all) {
   // aliased to src during tests
   let { clearMigrations } = await import('../dist/migrate.js');
@@ -25,7 +25,7 @@ const FS_CLASSES = [
 // Used to bypass mocking internal package files
 const INTERNAL_FILE_REG = new RegExp(
   '(/|\\\\)(packages)\\1((?:(?!\\1).)+?)\\1' +
-    '(src|dist|test|package\\.json)(\\1|$)'
+  '(src|dist|test|package\\.json)(\\1|$)'
 );
 
 // Mock and spy on fs methods using an in-memory filesystem

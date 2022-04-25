@@ -1,6 +1,6 @@
-import { sha256hash } from '@percy/client/utils';
+import { sha256hash } from '@addepar/percy-client/utils';
 import { logger, api, setupTest, createTestServer, dedent } from './helpers/index.js';
-import Percy from '@percy/core';
+import Percy from '@addepar/percy-core';
 
 describe('Discovery', () => {
   let percy, server, captured;
@@ -594,7 +594,7 @@ describe('Discovery', () => {
     // bug we are testing here happens specifically when the Network event comes after the Fetch
     // event. Using a stub, we can cause Network events to happen a few milliseconds later than they
     // might, ensuring that they come after Fetch events.
-    spyOn(percy.browser, '_handleMessage').and.callFake(function(data) {
+    spyOn(percy.browser, '_handleMessage').and.callFake(function (data) {
       let { method } = JSON.parse(data);
 
       if (method === 'Network.requestWillBeSent') {
@@ -883,7 +883,7 @@ describe('Discovery', () => {
     async function triggerSessionEventError(event, error) {
       let { Session } = await import('../src/session.js');
 
-      let spy = spyOn(Session.prototype, 'send').and.callFake(function(...args) {
+      let spy = spyOn(Session.prototype, 'send').and.callFake(function (...args) {
         if (args[0] === event) return Promise.reject(error);
         return spy.and.originalFn.apply(this, args);
       });

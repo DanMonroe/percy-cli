@@ -1,1 +1,1 @@
-export * from '@percy/core/test/helpers';
+export * from '@addepar/percy-core/test/helpers';

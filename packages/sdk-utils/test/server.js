@@ -4,7 +4,7 @@ import path from 'path';
 
 // create a testing context for mocking the local percy server and a local testing site
 export async function context() {
-  let { createTestServer } = await import('@percy/core/test/helpers/server');
+  let { createTestServer } = await import('@addepar/percy-core/test/helpers/server');
 
   let ctx = {
     async call(path, ...args) {
@@ -59,7 +59,7 @@ export async function context() {
     }, 5338);
 
     ctx.server.route((req, res, next) => {
-      if (req.body) try { req.body = JSON.parse(req.body); } catch {}
+      if (req.body) try { req.body = JSON.parse(req.body); } catch { }
       res.setHeader('Access-Control-Expose-Headers', '*, X-Percy-Core-Version');
       res.setHeader('X-Percy-Core-Version', ctx.server.version || '1.0.0');
       return next();
@@ -110,7 +110,7 @@ export async function context() {
 
 // start a testing server to control a context remotely
 export async function start(args) {
-  let { logger } = await import('@percy/logger');
+  let { logger } = await import('@addepar/percy-logger');
   let { WebSocketServer } = await import('ws');
   let log = logger('utils:test/server');
 

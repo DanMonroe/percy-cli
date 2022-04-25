@@ -1,6 +1,6 @@
 import { logger, api, setupTest, createTestServer } from './helpers/index.js';
 import { generatePromise } from '../src/utils.js';
-import Percy from '@percy/core';
+import Percy from '@addepar/percy-core';
 
 describe('Percy', () => {
   let percy, server;
@@ -644,7 +644,7 @@ describe('Percy', () => {
 
       expect(logger.stderr).toEqual([
         '[percy] Warning: The #capture() method will be ' +
-          'removed in 1.0.0. Use #snapshot() instead.'
+        'removed in 1.0.0. Use #snapshot() instead.'
       ]);
     });
   });

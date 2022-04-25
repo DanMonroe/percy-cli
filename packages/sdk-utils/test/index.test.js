@@ -1,5 +1,5 @@
 import helpers from './helpers.js';
-import utils from '@percy/sdk-utils';
+import utils from '@addepar/percy-sdk-utils';
 
 describe('SDK Utils', () => {
   beforeEach(async () => {
@@ -150,7 +150,7 @@ describe('SDK Utils', () => {
   describe('fetchPercyDOM()', () => {
     let { fetchPercyDOM } = utils;
 
-    it('fetches @percy/dom from the CLI API and caches the result', async () => {
+    it('fetches @addepar/percy-dom from the CLI API and caches the result', async () => {
       await expectAsync(fetchPercyDOM()).toBeResolvedTo(
         `window.PercyDOM = { serialize: ${await helpers.testSerialize()} }`);
       await expectAsync(fetchPercyDOM()).toBeResolved();

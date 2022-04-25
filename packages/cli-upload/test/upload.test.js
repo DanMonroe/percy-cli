@@ -1,5 +1,5 @@
-import { fs, logger, api, setupTest } from '@percy/cli-command/test/helpers';
-import upload from '@percy/cli-upload';
+import { fs, logger, api, setupTest } from '@addepar/percy-cli-command/test/helpers';
+import upload from '@addepar/percy-cli-upload';
 
 // http://png-pixel.com/
 const pixel = Buffer.from((
@@ -8,7 +8,7 @@ const pixel = Buffer.from((
 
 describe('percy upload', () => {
   beforeEach(async () => {
-    upload.packageInformation = { name: '@percy/cli-upload' };
+    upload.packageInformation = { name: '@addepar/percy-cli-upload' };
     process.env.PERCY_TOKEN = '<<PERCY_TOKEN>>';
 
     await setupTest({

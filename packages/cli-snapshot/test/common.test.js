@@ -1,9 +1,9 @@
-import { logger, setupTest } from '@percy/cli-command/test/helpers';
-import snapshot from '@percy/cli-snapshot';
+import { logger, setupTest } from '@addepar/percy-cli-command/test/helpers';
+import snapshot from '@addepar/percy-cli-snapshot';
 
 describe('percy snapshot', () => {
   beforeEach(async () => {
-    snapshot.packageInformation = { name: '@percy/cli-snapshot' };
+    snapshot.packageInformation = { name: '@addepar/percy-cli-snapshot' };
     await setupTest();
   });
 

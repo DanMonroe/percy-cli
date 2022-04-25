@@ -1,7 +1,7 @@
-# @percy/client
+# @addepar/percy-client
 
 Communicate with Percy's API to create builds and snapshots, upload resources, and finalize builds
-and snapshots. Uses [`@percy/env`](.packages/env) to send environment information with new
+and snapshots. Uses [`@addepar/percy-env`](.packages/env) to send environment information with new
 builds. Can also be used to query for a project's builds using a read access token.
 
 - [Usage](#usage)
@@ -15,7 +15,7 @@ builds. Can also be used to query for a project's builds using a read access tok
 ## Usage
 
 ``` js
-import PercyClient from '@percy/client'
+import PercyClient from '@addepar/percy-client'
 
 const client = new PercyClient(options)
 ```
@@ -29,7 +29,7 @@ const client = new PercyClient(options)
 ## Create a build
 
 Creates a percy build. Only one build can be created at a time per instance. During this step,
-various environment information is collected via [`@percy/env`](./packages/env#readme) and
+various environment information is collected via [`@addepar/percy-env`](./packages/env#readme) and
 associated with the new build. If `PERCY_PARALLEL_TOTAL` and `PERCY_PARALLEL_NONCE` are present, a
 build shard is created as part of a parallelized Percy build.
 

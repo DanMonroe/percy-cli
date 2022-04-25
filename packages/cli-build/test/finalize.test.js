@@ -1,4 +1,4 @@
-import { logger, setupTest } from '@percy/cli-command/test/helpers';
+import { logger, setupTest } from '@addepar/percy-cli-command/test/helpers';
 import finalize from '../src/finalize.js';
 
 describe('percy build:finalize', () => {
