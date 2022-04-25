@@ -1,6 +1,6 @@
 {
   "name": "@addepar/percy-sdk-utils",
-  "version": "1.0.9-addepar.2",
+  "version": "1.0.9-addepar.3",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -58,6 +58,6 @@
     }
   },
   "dependencies": {
-    "@addepar/percy-logger": "1.0.9-addepar.2"
+    "@addepar/percy-logger": "^1.0.9-addepar.3"
   }
 }

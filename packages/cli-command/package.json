@@ -1,6 +1,6 @@
 {
   "name": "@addepar/percy-cli-command",
-  "version": "1.0.9-addepar.2",
+  "version": "1.0.9-addepar.3",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -34,8 +34,8 @@
     "test:coverage": "yarn test --coverage"
   },
   "dependencies": {
-    "@addepar/percy-config": "1.0.9-addepar.2",
-    "@addepar/percy-core": "1.0.9-addepar.2",
-    "@addepar/percy-logger": "1.0.9-addepar.2"
+    "@addepar/percy-config": "^1.0.9-addepar.3",
+    "@addepar/percy-core": "^1.0.9-addepar.3",
+    "@addepar/percy-logger": "^1.0.9-addepar.3"
   }
 }
