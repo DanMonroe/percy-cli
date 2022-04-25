@@ -1,4 +1,4 @@
-import command from '@percy/cli-command';
+import command from '@addepar/percy-cli-command';
 import * as common from './common.js';
 import start from './start.js';
 import stop from './stop.js';

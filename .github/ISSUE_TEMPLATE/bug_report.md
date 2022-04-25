@@ -30,7 +30,7 @@ https://github.com/percy/cli/discussions/new
 ## Environment
 
 - Node version:
-- `@percy/cli` version:
+- `@addepar/percy-cli` version:
 - Version of Percy SDK you’re using:
 - If needed, a build or snapshot ID:
 - OS version:

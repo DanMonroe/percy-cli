@@ -1,6 +1,6 @@
-import PercyClient from '@percy/client';
-import PercyConfig from '@percy/config';
-import logger from '@percy/logger';
+import PercyClient from '@addepar/percy-client';
+import PercyConfig from '@addepar/percy-config';
+import logger from '@addepar/percy-logger';
 import Queue from './queue.js';
 import Browser from './browser.js';
 import { createPercyServer, createStaticServer } from './api.js';
@@ -33,7 +33,7 @@ export class Percy {
     dryRun,
     // configuration filepath
     config,
-    // provided to @percy/client
+    // provided to @addepar/percy-client
     token,
     clientInfo = '',
     environmentInfo = '',

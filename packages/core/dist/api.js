@@ -1,11 +1,11 @@
 import fs from 'fs';
 import path from 'path';
 import { createRequire } from 'module';
-import logger from '@percy/logger';
+import logger from '@addepar/percy-logger';
 import { getPackageJSON } from './utils.js';
 import Server from './server.js'; // need require.resolve until import.meta.resolve can be transpiled
 
-export const PERCY_DOM = createRequire(import.meta.url).resolve('@percy/dom'); // Create a Percy CLI API server instance
+export const PERCY_DOM = createRequire(import.meta.url).resolve('@addepar/percy-dom'); // Create a Percy CLI API server instance
 
 export function createPercyServer(percy, port) {
   let pkg = getPackageJSON(import.meta.url);
@@ -40,12 +40,12 @@ export function createPercyServer(percy, port) {
   })) // responds once idle (may take a long time)
   .route('get', '/percy/idle', async (req, res) => res.json(200, {
     success: await percy.idle().then(() => true)
-  })) // convenient @percy/dom bundle
+  })) // convenient @addepar/percy-dom bundle
   .route('get', '/percy/dom.js', (req, res) => {
     return res.file(200, PERCY_DOM);
-  }) // legacy agent wrapper for @percy/dom
+  }) // legacy agent wrapper for @addepar/percy-dom
   .route('get', '/percy-agent.js', async (req, res) => {
-    logger('core:server').deprecated(['It looks like you’re using @percy/cli with an older SDK.', 'Please upgrade to the latest version to fix this warning.', 'See these docs for more info: https:docs.percy.io/docs/migrating-to-percy-cli'].join(' '));
+    logger('core:server').deprecated(['It looks like you’re using @addepar/percy-cli with an older SDK.', 'Please upgrade to the latest version to fix this warning.', 'See these docs for more info: https:docs.percy.io/docs/migrating-to-percy-cli'].join(' '));
     let content = await fs.promises.readFile(PERCY_DOM, 'utf-8');
     let wrapper = '(window.PercyAgent = class { snapshot(n, o) { return PercyDOM.serialize(o); } });';
     return res.send(200, 'applicaton/javascript', content.concat(wrapper));

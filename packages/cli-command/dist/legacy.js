@@ -1,5 +1,5 @@
-import { merge } from '@percy/config/utils';
-import { command } from './command.js'; // Legacy flags for older commands that inadvertently import a newer @percy/cli-command
+import { merge } from '@addepar/percy-config/utils';
+import { command } from './command.js'; // Legacy flags for older commands that inadvertently import a newer @addepar/percy-cli-command
 
 export const legacyFlags = {
   config: {},

@@ -61,8 +61,8 @@ if (DUMP_FAILED_TEST_LOGS) {
     specDone: async ({ status }) => {
       let logger = typeof window !== 'undefined'
         ? (window.PercyLogger && window.PercyLogger.TestHelpers) ||
-          (window.PercySDKUtils && window.PercySDKUtils.TestHelpers.logger)
-        : (await import('@percy/logger/test/helpers')).logger;
+        (window.PercySDKUtils && window.PercySDKUtils.TestHelpers.logger)
+        : (await import('@addepar/percy-logger/test/helpers')).logger;
       if (logger && status === 'failed') logger.dump();
     }
   });

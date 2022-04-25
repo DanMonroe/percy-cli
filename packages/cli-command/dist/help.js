@@ -1,4 +1,4 @@
-import logger from '@percy/logger'; // Helper to return an argument's description including it's default value.
+import logger from '@addepar/percy-logger'; // Helper to return an argument's description including it's default value.
 
 function argumentDescription(arg) {
   let desc = arg.description || '';

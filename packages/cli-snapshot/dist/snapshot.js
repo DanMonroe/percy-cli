@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import command from '@percy/cli-command';
+import command from '@addepar/percy-cli-command';
 import * as SnapshotConfig from './config.js';
 export const snapshot = command('snapshot', {
   description: 'Snapshot a static directory, snapshots file, or sitemap URL',

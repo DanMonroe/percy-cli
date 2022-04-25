@@ -1,4 +1,4 @@
-import command from '@percy/cli-command';
+import command from '@addepar/percy-cli-command';
 import * as common from './common.js';
 export const ping = command('ping', {
   description: 'Pings a local running Percy snapshot server',
@@ -13,7 +13,7 @@ export const ping = command('ping', {
   if (!percy) exit(0, 'Percy is disabled');
   let {
     request
-  } = await import('@percy/cli-command/utils');
+  } = await import('@addepar/percy-cli-command/utils');
   let ping = `http://localhost:${flags.port}/percy/healthcheck`;
 
   try {

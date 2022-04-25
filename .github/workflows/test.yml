@@ -41,20 +41,20 @@ jobs:
         os: [ubuntu-latest]
         node: [14]
         package:
-          - '@percy/env'
-          - '@percy/client'
-          - '@percy/dom'
-          - '@percy/logger'
-          - '@percy/config'
-          - '@percy/core'
-          - '@percy/cli'
-          - '@percy/cli-command'
-          - '@percy/cli-exec'
-          - '@percy/cli-snapshot'
-          - '@percy/cli-upload'
-          - '@percy/cli-build'
-          - '@percy/cli-config'
-          - '@percy/sdk-utils'
+          - '@addepar/percy-env'
+          - '@addepar/percy-client'
+          - '@addepar/percy-dom'
+          - '@addepar/percy-logger'
+          - '@addepar/percy-config'
+          - '@addepar/percy-core'
+          - '@addepar/percy-cli'
+          - '@addepar/percy-cli-command'
+          - '@addepar/percy-cli-exec'
+          - '@addepar/percy-cli-snapshot'
+          - '@addepar/percy-cli-upload'
+          - '@addepar/percy-cli-build'
+          - '@addepar/percy-cli-config'
+          - '@addepar/percy-sdk-utils'
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3

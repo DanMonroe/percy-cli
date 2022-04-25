@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import command, { PercyConfig } from '@percy/cli-command';
+import command, { PercyConfig } from '@addepar/percy-cli-command';
 export const migrate = command('migrate', {
   description: 'Migrate a Percy config file to the latest version',
   args: [{

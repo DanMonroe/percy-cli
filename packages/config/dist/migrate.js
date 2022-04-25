@@ -1,4 +1,4 @@
-import logger from '@percy/logger';
+import logger from '@addepar/percy-logger';
 import { get, set, del, map, joinPropertyPath, normalize } from './utils/index.js'; // Global set of registered migrations
 
 const migrations = new Map(); // Register a migration function for the main config schema by default

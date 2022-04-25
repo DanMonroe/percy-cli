@@ -1,5 +1,5 @@
-import logger from '@percy/logger';
-import PercyConfig from '@percy/config';
+import logger from '@addepar/percy-logger';
+import PercyConfig from '@addepar/percy-config';
 import micromatch from 'micromatch';
 import { configSchema } from './config.js';
 import { request, hostnameMatches, createRootResource, createPercyCSSResource, createLogResource } from './utils.js'; // Throw a better error message for missing or invalid urls

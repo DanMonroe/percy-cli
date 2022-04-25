@@ -1,2 +1,2 @@
-export * from '@percy/config/utils';
-export * from '@percy/core/utils';
+export * from '@addepar/percy-config/utils';
+export * from '@addepar/percy-core/utils';

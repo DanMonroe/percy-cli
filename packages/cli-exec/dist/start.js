@@ -1,4 +1,4 @@
-import command from '@percy/cli-command';
+import command from '@addepar/percy-cli-command';
 import * as common from './common.js';
 export const start = command('start', {
   description: 'Starts a local Percy snapshot server',

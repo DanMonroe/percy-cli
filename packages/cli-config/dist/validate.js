@@ -1,4 +1,4 @@
-import command, { PercyConfig } from '@percy/cli-command';
+import command, { PercyConfig } from '@addepar/percy-cli-command';
 export const validate = command('validate', {
   description: 'Validate a Percy config file',
   args: [{

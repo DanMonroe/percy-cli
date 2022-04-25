@@ -1,4 +1,4 @@
-import command from '@percy/cli-command';
+import command from '@addepar/percy-cli-command';
 export const finalize = command('finalize', {
   description: 'Finalize parallel Percy builds',
   percy: true

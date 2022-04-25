@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import command, { PercyConfig } from '@percy/cli-command';
+import command, { PercyConfig } from '@addepar/percy-cli-command';
 const DEFAULT_FILES = {
   rc: '.percyrc',
   yaml: '.percy.yaml',

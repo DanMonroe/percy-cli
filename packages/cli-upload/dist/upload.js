@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import command from '@percy/cli-command';
+import command from '@addepar/percy-cli-command';
 import * as UploadConfig from './config.js';
 const ALLOWED_FILE_TYPES = /\.(png|jpg|jpeg)$/i;
 export const upload = command('upload', {

@@ -1,4 +1,4 @@
-import command from '@percy/cli-command';
+import command from '@addepar/percy-cli-command';
 import create from './create.js';
 import validate from './validate.js';
 import migrate from './migrate.js';

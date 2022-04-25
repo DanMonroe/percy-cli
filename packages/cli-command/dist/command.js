@@ -1,7 +1,7 @@
-import logger from '@percy/logger';
-import PercyConfig from '@percy/config';
-import { set, del } from '@percy/config/utils';
-import * as CoreConfig from '@percy/core/config';
+import logger from '@addepar/percy-logger';
+import PercyConfig from '@addepar/percy-config';
+import { set, del } from '@addepar/percy-config/utils';
+import * as CoreConfig from '@addepar/percy-core/config';
 import * as builtInFlags from './flags.js';
 import formatHelp from './help.js';
 import parse from './parse.js'; // Copies a command definition and adds built-in flags and config options.
@@ -116,7 +116,7 @@ async function runCommandWithContext(parsed) {
   if (def.percy) {
     let {
       Percy
-    } = await import('@percy/core'); // set defaults and prune preconfiguraton options
+    } = await import('@addepar/percy-core'); // set defaults and prune preconfiguraton options
 
     let conf = del({
       server: false,

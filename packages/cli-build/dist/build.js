@@ -1,4 +1,4 @@
-import command from '@percy/cli-command';
+import command from '@addepar/percy-cli-command';
 import finalize from './finalize.js';
 import wait from './wait.js';
 export const build = command('build', {

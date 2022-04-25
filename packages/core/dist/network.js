@@ -1,4 +1,4 @@
-import logger from '@percy/logger';
+import logger from '@addepar/percy-logger';
 import { waitFor } from './utils.js';
 import { createRequestHandler, createRequestFinishedHandler, createRequestFailedHandler } from './discovery.js'; // The Interceptor class creates common handlers for dealing with intercepting asset requests
 // for a given page using various devtools protocol events and commands.

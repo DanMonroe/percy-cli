@@ -1,4 +1,4 @@
-import logger from '@percy/logger'; // Global CLI flags
+import logger from '@addepar/percy-logger'; // Global CLI flags
 
 export const verbose = {
   name: 'verbose',

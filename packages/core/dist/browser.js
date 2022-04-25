@@ -5,7 +5,7 @@ import spawn from 'cross-spawn';
 import EventEmitter from 'events';
 import WebSocket from 'ws';
 import rimraf from 'rimraf';
-import logger from '@percy/logger';
+import logger from '@addepar/percy-logger';
 import install from './install.js';
 import Session from './session.js';
 import Page from './page.js';
