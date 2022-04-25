@@ -32,7 +32,7 @@
     ]
   },
   "dependencies": {
-    "@percy/cli-command": "1.0.8",
+    "@percy/cli-command": "https://gitpkg.now.sh/Addepar/percy-cli/packages/cli-command?aschenoni/percy-build-2",
     "cross-spawn": "^7.0.3",
     "which": "^2.0.2"
   }

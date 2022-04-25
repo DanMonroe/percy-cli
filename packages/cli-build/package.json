@@ -32,6 +32,6 @@
     ]
   },
   "dependencies": {
-    "@percy/cli-command": "1.0.8"
+    "@percy/cli-command": "https://gitpkg.now.sh/Addepar/percy-cli/packages/cli-command?aschenoni/percy-build-2"
   }
 }

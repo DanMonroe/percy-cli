@@ -34,8 +34,8 @@
     "test:coverage": "yarn test --coverage"
   },
   "dependencies": {
-    "@percy/config": "1.0.8",
-    "@percy/core": "1.0.8",
-    "@percy/logger": "1.0.8"
+    "@percy/config": "https://gitpkg.now.sh/Addepar/percy-cli/packages/config?aschenoni/percy-build-2",
+    "@percy/core": "https://gitpkg.now.sh/Addepar/percy-cli/packages/core?aschenoni/percy-build-2",
+    "@percy/logger": "https://gitpkg.now.sh/Addepar/percy-cli/packages/logger?aschenoni/percy-build-2"
   }
 }

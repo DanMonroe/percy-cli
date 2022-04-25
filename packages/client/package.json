@@ -31,7 +31,7 @@
     "test:coverage": "yarn test --coverage"
   },
   "dependencies": {
-    "@percy/env": "1.0.8",
-    "@percy/logger": "1.0.8"
+    "@percy/env": "https://gitpkg.now.sh/Addepar/percy-cli/packages/env?aschenoni/percy-build-2",
+    "@percy/logger": "https://gitpkg.now.sh/Addepar/percy-cli/packages/logger?aschenoni/percy-build-2"
   }
 }
