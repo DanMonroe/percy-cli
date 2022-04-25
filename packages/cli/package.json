@@ -1,6 +1,6 @@
 {
   "name": "@addepar/percy-cli",
-  "version": "1.0.9-addepar.1",
+  "version": "1.0.9-addepar.2",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -30,13 +30,13 @@
     "test:coverage": "yarn test --coverage"
   },
   "dependencies": {
-    "@addepar/percy-cli-build": "^1.0.9-addepar.1",
-    "@addepar/percy-cli-command": "^1.0.9-addepar.1",
-    "@addepar/percy-cli-config": "^1.0.9-addepar.1",
-    "@addepar/percy-cli-exec": "^1.0.9-addepar.1",
-    "@addepar/percy-cli-snapshot": "^1.0.9-addepar.1",
-    "@addepar/percy-cli-upload": "^1.0.9-addepar.1",
-    "@addepar/percy-client": "^1.0.9-addepar.1",
-    "@addepar/percy-logger": "^1.0.9-addepar.1"
+    "@addepar/percy-cli-build": "1.0.9-addepar.2",
+    "@addepar/percy-cli-command": "1.0.9-addepar.2",
+    "@addepar/percy-cli-config": "1.0.9-addepar.2",
+    "@addepar/percy-cli-exec": "1.0.9-addepar.2",
+    "@addepar/percy-cli-snapshot": "1.0.9-addepar.2",
+    "@addepar/percy-cli-upload": "1.0.9-addepar.2",
+    "@addepar/percy-client": "1.0.9-addepar.2",
+    "@addepar/percy-logger": "1.0.9-addepar.2"
   }
 }
