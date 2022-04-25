@@ -32,7 +32,7 @@
     ]
   },
   "dependencies": {
-    "@addepar/percy-cli-command": "^1.0.9-addepar.0",
+    "@addepar/percy-cli-command": "1.0.9-addepar.0",
     "cross-spawn": "^7.0.3",
     "which": "^2.0.2"
   }

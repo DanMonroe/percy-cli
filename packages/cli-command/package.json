@@ -34,8 +34,8 @@
     "test:coverage": "yarn test --coverage"
   },
   "dependencies": {
-    "@addepar/percy-config": "^1.0.9-addepar.0",
-    "@addepar/percy-core": "^1.0.9-addepar.0",
-    "@addepar/percy-logger": "^1.0.9-addepar.0"
+    "@addepar/percy-config": "1.0.9-addepar.0",
+    "@addepar/percy-core": "1.0.9-addepar.0",
+    "@addepar/percy-logger": "1.0.9-addepar.0"
   }
 }

@@ -32,6 +32,6 @@
     ]
   },
   "dependencies": {
-    "@addepar/percy-cli-command": "^1.0.9-addepar.0"
+    "@addepar/percy-cli-command": "1.0.9-addepar.0"
   }
 }
