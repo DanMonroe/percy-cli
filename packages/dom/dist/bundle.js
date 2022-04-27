@@ -234,9 +234,10 @@
 
 
     const cloneNodeAndShadow = doc => {
-      let clonedDocument = doc.cloneNode(true);
-      clonedDocument.documentElement.replaceWith(deepClone(doc.documentElement));
-      return clonedDocument;
+      let mockDocument = deepClone(doc.documentElement);
+      mockDocument.head = document.createDocumentFragment();
+      mockDocument.documentElement = mockDocument.firstChild;
+      return mockDocument;
     };
     /**
      * Use `getInnerHTML()` to serialize shadow dom as <template> tags. `innerHTML` and `outerHTML` don't do this. Buzzword: "declarative shadow dom"
