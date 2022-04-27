@@ -34,8 +34,8 @@
     "test:coverage": "yarn test --coverage"
   },
   "dependencies": {
-    "@percy/config": "https://gitpkg.now.sh/Addepar/percy-cli/packages/config?a32237061b38d1d0e27d7766319917d0dc81578b",
-    "@percy/core": "https://gitpkg.now.sh/Addepar/percy-cli/packages/core?a32237061b38d1d0e27d7766319917d0dc81578b",
-    "@percy/logger": "https://gitpkg.now.sh/Addepar/percy-cli/packages/logger?a32237061b38d1d0e27d7766319917d0dc81578b"
+    "@percy/config": "https://github.com/Addepar/percy-cli/blob/v1.0.9-addepar.6/packs/percy-config-1.0.9-addepar.5.tgz?raw=true",
+    "@percy/core": "https://github.com/Addepar/percy-cli/blob/v1.0.9-addepar.6/packs/percy-core-1.0.9-addepar.5.tgz?raw=true",
+    "@percy/logger": "https://github.com/Addepar/percy-cli/blob/v1.0.9-addepar.6/packs/percy-logger-1.0.9-addepar.5.tgz?raw=true"
   }
 }

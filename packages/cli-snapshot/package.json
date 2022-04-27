@@ -32,7 +32,7 @@
     ]
   },
   "dependencies": {
-    "@percy/cli-command": "https://gitpkg.now.sh/Addepar/percy-cli/packages/cli-command?a32237061b38d1d0e27d7766319917d0dc81578b",
+    "@percy/cli-command": "https://github.com/Addepar/percy-cli/blob/v1.0.9-addepar.6/packs/percy-cli-command-1.0.9-addepar.5.tgz?raw=true",
     "yaml": "^2.0.0"
   }
 }

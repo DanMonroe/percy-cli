@@ -30,13 +30,13 @@
     "test:coverage": "yarn test --coverage"
   },
   "dependencies": {
-    "@percy/cli-build": "https://gitpkg.now.sh/Addepar/percy-cli/packages/cli-build?a32237061b38d1d0e27d7766319917d0dc81578b",
-    "@percy/cli-command": "https://gitpkg.now.sh/Addepar/percy-cli/packages/cli-command?a32237061b38d1d0e27d7766319917d0dc81578b",
-    "@percy/cli-config": "https://gitpkg.now.sh/Addepar/percy-cli/packages/cli-config?a32237061b38d1d0e27d7766319917d0dc81578b",
-    "@percy/cli-exec": "https://gitpkg.now.sh/Addepar/percy-cli/packages/cli-exec?a32237061b38d1d0e27d7766319917d0dc81578b",
-    "@percy/cli-snapshot": "https://gitpkg.now.sh/Addepar/percy-cli/packages/cli-snapshot?a32237061b38d1d0e27d7766319917d0dc81578b",
-    "@percy/cli-upload": "https://gitpkg.now.sh/Addepar/percy-cli/packages/cli-upload?a32237061b38d1d0e27d7766319917d0dc81578b",
-    "@percy/client": "https://gitpkg.now.sh/Addepar/percy-cli/packages/client?a32237061b38d1d0e27d7766319917d0dc81578b",
-    "@percy/logger": "https://gitpkg.now.sh/Addepar/percy-cli/packages/logger?a32237061b38d1d0e27d7766319917d0dc81578b"
+    "@percy/cli-build": "https://github.com/Addepar/percy-cli/blob/v1.0.9-addepar.6/packs/percy-cli-build-1.0.9-addepar.5.tgz?raw=true",
+    "@percy/cli-command": "https://github.com/Addepar/percy-cli/blob/v1.0.9-addepar.6/packs/percy-cli-command-1.0.9-addepar.5.tgz?raw=true",
+    "@percy/cli-config": "https://github.com/Addepar/percy-cli/blob/v1.0.9-addepar.6/packs/percy-cli-config-1.0.9-addepar.5.tgz?raw=true",
+    "@percy/cli-exec": "https://github.com/Addepar/percy-cli/blob/v1.0.9-addepar.6/packs/percy-cli-exec-1.0.9-addepar.5.tgz?raw=true",
+    "@percy/cli-snapshot": "https://github.com/Addepar/percy-cli/blob/v1.0.9-addepar.6/packs/percy-cli-snapshot-1.0.9-addepar.5.tgz?raw=true",
+    "@percy/cli-upload": "https://github.com/Addepar/percy-cli/blob/v1.0.9-addepar.6/packs/percy-cli-upload-1.0.9-addepar.5.tgz?raw=true",
+    "@percy/client": "https://github.com/Addepar/percy-cli/blob/v1.0.9-addepar.6/packs/percy-client-1.0.9-addepar.5.tgz?raw=true",
+    "@percy/logger": "https://github.com/Addepar/percy-cli/blob/v1.0.9-addepar.6/packs/percy-logger-1.0.9-addepar.5.tgz?raw=true"
   }
 }
