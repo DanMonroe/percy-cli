@@ -31,7 +31,7 @@
     "test:coverage": "yarn test --coverage"
   },
   "dependencies": {
-    "@percy/env": "https://github.com/Addepar/percy-cli/blob/v1.0.9-addepar.6/packs/percy-env-1.0.9-addepar.5.tgz?raw=true",
-    "@percy/logger": "https://github.com/Addepar/percy-cli/blob/v1.0.9-addepar.6/packs/percy-logger-1.0.9-addepar.5.tgz?raw=true"
+    "@percy/env": "https://github.com/Addepar/percy-cli/blob/v1.0.9-addepar.7/packs/percy-env-1.0.9-addepar.7.tgz?raw=true",
+    "@percy/logger": "https://github.com/Addepar/percy-cli/blob/v1.0.9-addepar.7/packs/percy-logger-1.0.9-addepar.7.tgz?raw=true"
   }
 }

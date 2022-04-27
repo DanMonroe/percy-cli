@@ -39,10 +39,10 @@
     "test:types": "tsd"
   },
   "dependencies": {
-    "@percy/client": "https://github.com/Addepar/percy-cli/blob/v1.0.9-addepar.6/packs/percy-client-1.0.9-addepar.5.tgz?raw=true",
-    "@percy/config": "https://github.com/Addepar/percy-cli/blob/v1.0.9-addepar.6/packs/percy-config-1.0.9-addepar.5.tgz?raw=true",
-    "@percy/dom": "https://github.com/Addepar/percy-cli/blob/v1.0.9-addepar.6/packs/percy-dom-1.0.9-addepar.5.tgz?raw=true",
-    "@percy/logger": "https://github.com/Addepar/percy-cli/blob/v1.0.9-addepar.6/packs/percy-logger-1.0.9-addepar.5.tgz?raw=true",
+    "@percy/client": "https://github.com/Addepar/percy-cli/blob/v1.0.9-addepar.7/packs/percy-client-1.0.9-addepar.7.tgz?raw=true",
+    "@percy/config": "https://github.com/Addepar/percy-cli/blob/v1.0.9-addepar.7/packs/percy-config-1.0.9-addepar.7.tgz?raw=true",
+    "@percy/dom": "https://github.com/Addepar/percy-cli/blob/v1.0.9-addepar.7/packs/percy-dom-1.0.9-addepar.7.tgz?raw=true",
+    "@percy/logger": "https://github.com/Addepar/percy-cli/blob/v1.0.9-addepar.7/packs/percy-logger-1.0.9-addepar.7.tgz?raw=true",
     "content-disposition": "^0.5.4",
     "cross-spawn": "^7.0.3",
     "extract-zip": "^2.0.1",
