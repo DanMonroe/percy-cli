@@ -39,10 +39,10 @@
     "test:types": "tsd"
   },
   "dependencies": {
-    "@percy/client": "https://gitpkg.now.sh/Addepar/percy-cli/packages/client?aschenoni/percy-build-2",
-    "@percy/config": "https://gitpkg.now.sh/Addepar/percy-cli/packages/config?aschenoni/percy-build-2",
-    "@percy/dom": "https://gitpkg.now.sh/Addepar/percy-cli/packages/dom?aschenoni/percy-build-2",
-    "@percy/logger": "https://gitpkg.now.sh/Addepar/percy-cli/packages/logger?aschenoni/percy-build-2",
+    "@percy/client": "https://gitpkg.now.sh/Addepar/percy-cli/packages/client?a32237061b38d1d0e27d7766319917d0dc81578b",
+    "@percy/config": "https://gitpkg.now.sh/Addepar/percy-cli/packages/config?a32237061b38d1d0e27d7766319917d0dc81578b",
+    "@percy/dom": "https://gitpkg.now.sh/Addepar/percy-cli/packages/dom?a32237061b38d1d0e27d7766319917d0dc81578b",
+    "@percy/logger": "https://gitpkg.now.sh/Addepar/percy-cli/packages/logger?a32237061b38d1d0e27d7766319917d0dc81578b",
     "content-disposition": "^0.5.4",
     "cross-spawn": "^7.0.3",
     "extract-zip": "^2.0.1",

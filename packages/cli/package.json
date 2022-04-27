@@ -30,13 +30,13 @@
     "test:coverage": "yarn test --coverage"
   },
   "dependencies": {
-    "@percy/cli-build": "https://gitpkg.now.sh/Addepar/percy-cli/packages/cli-build?aschenoni/percy-build-2",
-    "@percy/cli-command": "https://gitpkg.now.sh/Addepar/percy-cli/packages/cli-command?aschenoni/percy-build-2",
-    "@percy/cli-config": "https://gitpkg.now.sh/Addepar/percy-cli/packages/cli-config?aschenoni/percy-build-2",
-    "@percy/cli-exec": "https://gitpkg.now.sh/Addepar/percy-cli/packages/cli-exec?aschenoni/percy-build-2",
-    "@percy/cli-snapshot": "https://gitpkg.now.sh/Addepar/percy-cli/packages/cli-snapshot?aschenoni/percy-build-2",
-    "@percy/cli-upload": "https://gitpkg.now.sh/Addepar/percy-cli/packages/cli-upload?aschenoni/percy-build-2",
-    "@percy/client": "https://gitpkg.now.sh/Addepar/percy-cli/packages/client?aschenoni/percy-build-2",
-    "@percy/logger": "https://gitpkg.now.sh/Addepar/percy-cli/packages/logger?aschenoni/percy-build-2"
+    "@percy/cli-build": "https://gitpkg.now.sh/Addepar/percy-cli/packages/cli-build?a32237061b38d1d0e27d7766319917d0dc81578b",
+    "@percy/cli-command": "https://gitpkg.now.sh/Addepar/percy-cli/packages/cli-command?a32237061b38d1d0e27d7766319917d0dc81578b",
+    "@percy/cli-config": "https://gitpkg.now.sh/Addepar/percy-cli/packages/cli-config?a32237061b38d1d0e27d7766319917d0dc81578b",
+    "@percy/cli-exec": "https://gitpkg.now.sh/Addepar/percy-cli/packages/cli-exec?a32237061b38d1d0e27d7766319917d0dc81578b",
+    "@percy/cli-snapshot": "https://gitpkg.now.sh/Addepar/percy-cli/packages/cli-snapshot?a32237061b38d1d0e27d7766319917d0dc81578b",
+    "@percy/cli-upload": "https://gitpkg.now.sh/Addepar/percy-cli/packages/cli-upload?a32237061b38d1d0e27d7766319917d0dc81578b",
+    "@percy/client": "https://gitpkg.now.sh/Addepar/percy-cli/packages/client?a32237061b38d1d0e27d7766319917d0dc81578b",
+    "@percy/logger": "https://gitpkg.now.sh/Addepar/percy-cli/packages/logger?a32237061b38d1d0e27d7766319917d0dc81578b"
   }
 }

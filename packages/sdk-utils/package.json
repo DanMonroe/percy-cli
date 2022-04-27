@@ -58,6 +58,6 @@
     }
   },
   "dependencies": {
-    "@percy/logger": "https://gitpkg.now.sh/Addepar/percy-cli/packages/logger?aschenoni/percy-build-2"
+    "@percy/logger": "https://gitpkg.now.sh/Addepar/percy-cli/packages/logger?a32237061b38d1d0e27d7766319917d0dc81578b"
   }
 }
