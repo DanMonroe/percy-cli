@@ -136,7 +136,7 @@
 
         if (!dataUrl || dataUrl === 'data:,') continue; // create an image element in the cloned dom
 
-        let img = clone.createElement('img');
+        let img = dom.createElement('img');
         img.src = dataUrl; // copy canvas element attributes to the image element such as style, class,
         // or data attributes that may be targeted by CSS
 
