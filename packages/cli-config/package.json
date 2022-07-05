@@ -1,6 +1,6 @@
 {
   "name": "@percy/cli-config",
-  "version": "1.0.9-addepar.7",
+  "version": "1.0.9-addepar.9",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -32,6 +32,6 @@
     ]
   },
   "dependencies": {
-    "@percy/cli-command": "https://github.com/Addepar/percy-cli/blob/v1.0.9-addepar.7/packs/percy-cli-command-1.0.9-addepar.7.tgz?raw=true"
+    "@percy/cli-command": "https://github.com/Addepar/percy-cli/blob/v1.0.9-addepar.9/packs/percy-cli-command-1.0.9-addepar.9.tgz?raw=true"
   }
 }
