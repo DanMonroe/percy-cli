@@ -32,6 +32,6 @@
     ]
   },
   "dependencies": {
-    "@percy/cli-command": "https://github.com/Addepar/percy-cli/blob/v1.0.9-addepar.7/packs/percy-cli-command-1.0.9-addepar.7.tgz?raw=true"
+    "@percy/cli-command": "https://github.com/Addepar/percy-cli/blob/v1.0.9-addepar.8/packs/percy-cli-command-1.0.9-addepar.8.tgz?raw=true"
   }
 }
