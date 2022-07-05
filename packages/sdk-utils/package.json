@@ -1,6 +1,6 @@
 {
   "name": "@percy/sdk-utils",
-  "version": "1.6.3",
+  "version": "1.0.9-addepar.8",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -21,17 +21,12 @@
   ],
   "main": "./dist/index.js",
   "browser": "./dist/bundle.js",
+  "type": "module",
   "exports": {
-    ".": {
-      "node": "./dist/index.js",
-      "default": "./dist/bundle.js"
-    },
+    ".": "./dist/index.js",
     "./test/server": "./test/server.js",
     "./test/client": "./test/client.js",
-    "./test/helpers": {
-      "node": "./test/helpers.js",
-      "default": "./test/client.js"
-    }
+    "./test/helpers": "./test/helpers.js"
   },
   "scripts": {
     "build": "node ../../scripts/build",
@@ -52,8 +47,17 @@
     },
     "test": {
       "external": [
+        "@percy/logger",
         "test/server(.js)?"
-      ]
+      ],
+      "output": {
+        "globals": {
+          "@percy/logger": "PercySDKUtils.logger"
+        }
+      }
     }
+  },
+  "dependencies": {
+    "@percy/logger": "^1.0.9-addepar.8"
   }
 }

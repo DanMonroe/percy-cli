@@ -1,6 +1,6 @@
 {
   "name": "@percy/logger",
-  "version": "1.6.3",
+  "version": "1.0.9-addepar.8",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -15,9 +15,11 @@
   },
   "files": [
     "dist",
-    "test/helpers.js"
+    "test/helpers.js",
+    "test/client.js"
   ],
   "main": "./dist/index.js",
+  "browser": "./dist/bundle.js",
   "type": "module",
   "exports": {
     ".": "./dist/index.js",
@@ -25,10 +27,21 @@
     "./test/helpers": "./test/helpers.js",
     "./test/client": "./test/client.js"
   },
+  "imports": {
+    "#logger": {
+      "node": "./dist/logger.js",
+      "default": "./dist/browser.js"
+    }
+  },
   "scripts": {
     "build": "node ../../scripts/build",
     "lint": "eslint --ignore-path ../../.gitignore .",
     "test": "node ../../scripts/test",
     "test:coverage": "yarn test --coverage"
+  },
+  "rollup": {
+    "output": {
+      "name": "PercyLogger"
+    }
   }
 }
